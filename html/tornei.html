@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Keywords"
+      content="Campionato,Torneo,Championship,Tournament,Volleyball,Pallavolo,Basketball,Pallacanestro,Gestore calendario,Risultati,Classifica,Finali,Sport,Calcio,Football"
+    />
+    <meta
+      name="Descrizione"
+      content="Programma gestionale per tornei e campionati sportivi."
+    />
+    <!-- Title -->
+    <title>Tornei</title>
+
+    <!-- Style -->
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Script -->
+    <!-- Script including HTML -->
+    <script src="/html/partials/includeHTML.js"></script>
+    <script src="/js/cookieHandler.js"></script>
+    <script src="/js/torneiHandler.js"></script>
+    <script src="/js/bannerHandler.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1d057fd301.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/scroll.js"></script>
+  </head>
+
+  <body onload="showTournament(); stopBannerGeneral();" style="overflow-x: hidden;">
+    <!-- Navbar -->
+    <div include-html="/html/partials/navbar.html" class="sticky-top"></div>
+
+    <header class="jumbotron">
+      <div class="container">
+        <h1 class="display-4">Elenco Tornei</h1>
+      </div>
+    </header>
+
+    <br/>
+
+    <div class="padding" style="text-align: center;">
+      <div class="col-md-12">
+        <div
+          class="wow fadeInUp animated"
+          data-wow-duration="2s"
+          data-wow-delay="0.2s"
+          style="
+            visibility: visible;
+            animation-duration: 2s;
+            animation-delay: 0.2s;
+            animation-name: fadeInUp;
+          "
+        >
+          <p>
+            Questa sezione viene incontro a tutti coloro che non hanno la
+            possibilità di usufruire delle funzionalità di
+            <b>MySport GoEasy</b> tramite <b>applicazione Android</b> o tramite
+            il <b>programma Windows</b>.
+          </p>
+          <p>
+            Selezionando il nome del torneo avrete accesso ai dati riguardanti
+            <b>calendari</b>, <b>classifiche</b> e <b>squadre</b>.
+          </p>
+          <p>
+            <b>Attenzione</b>: per agevolare la navigazione questa sezione fa utilizzo di cookie,
+            procedendo in questa pagina l'utente ne accetta l'uso.<br>
+            I cookie non registrano alcuna informazione personale su un utente 
+            e gli eventuali dati identificabili non verranno memorizzati.<br>
+          </p>
+          <p>
+            Per maggiori informazioni visualizza la nostra <a href="/html/cookie.html">informativa sui cookie</a>.
+            <br />
+          </p>
+        </div>
+        <br/>
+        <div class="row" style="width: 400px; margin: 0 auto;">
+          <section class="content" id="content"></section>
+        </div>
+        <div class="row justify-content-center">
+          <a
+            onclick="setCookie();"
+            href="/html/tornei/calendario.html"
+            target="_blank"
+            class="btn btn-info my-1"
+            role="button"
+            style="width: 15%;"
+          >
+            Go
+          </a>
+        </div>
+      </div>
+    </div>
+    <br/>
+
+    <!-- FootBar -->
+    <div include-html="/html/partials/bottombar.html" class="fixed-bottom"></div>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Include the HTML -->
+    <script>
+      includeHTML();
+    </script>
+  </body>
+</html>

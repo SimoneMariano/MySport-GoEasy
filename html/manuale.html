@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title -->
+    <title>Manuali</title>
+
+    <!-- Style -->
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Script -->
+    <!-- Script including HTML -->
+    <script src="/html/partials/includeHTML.js"></script>
+    <script src="/js/bannerHandler.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1d057fd301.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body onload="stopBannerGeneral();">
+    <!-- Navbar -->
+    <div include-html="/html/partials/navbar.html" class="sticky-top"></div>
+
+    <br />
+    <header class="jumbotron">
+      <div class="container">
+        <h1 class="display-4">Manuali</h1>
+      </div>
+    </header>
+
+    <br>
+
+    <section class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Versione Full/Server</h2>
+          <p>
+            <b>MySport GoEasy</b>, nella versione per Windows, è dotato di un
+            help online che consente il suo utilizzo in modo completo ed
+            ottimale.<br />
+            Il manuale è in corso di completamento, ma i contenuti attualmente
+            presenti vengono comunque resi disponibili in questo sito tramite
+            <a
+              href="Build_html_doc/MySport%20GoEasy%20Help.html"
+              class="colored-link"
+              target="_blank"
+              style="color: black; text-shadow: #42dbf0; text-decoration: underline dotted #42dbf0;"
+              >questo link.</a
+            >
+          </p>
+          <br />
+          <h2>Versione Client</h2>
+          <p>
+            <b>MySport GoEasy (Mobile)</b>, nella versione per Android, non è
+            ancora dotato di un help.<br />
+            Il manuale è in corso di completamento, ma comunque i contenuti
+            attualmente presenti sono disponibili in questo sito tramite
+            <a
+              href="Mobil_html_doc/MySport%20GoEasy%20Mobile%20Help.html"
+              class="colored-link"
+              target="_blank"
+              style="color: black; text-shadow: #42dbf0; text-decoration: underline dotted #42dbf0;"
+              >questo link.</a
+            >
+          </p>
+        </div>
+        <div
+          class="col-8 col-md-4 justify-content-md-center"
+          style="
+            display: block;
+            margin: 0px auto;
+            text-align: center;
+            padding-top: 16px;
+          "
+        >
+          <img class="img-thumbnail" src="/images/manuale_home.jpg" />
+          <div
+            class="rounded border"
+            style="
+              margin-bottom: 8px;
+              margin-top: 8px;
+              max-width: fit-content;
+              padding: 4px;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            MSGE Manuale: Pagina iniziale
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+
+    <!-- FootBar -->
+    <div include-html="/html/partials/bottombar.html" class="fixed-bottom"></div>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Include the HTML -->
+    <script>
+      includeHTML();
+    </script>
+  </body>
+</html>
