@@ -38,7 +38,10 @@
     <script src="/js/scroll.js"></script>
   </head>
 
-  <body onload="showTournament(); stopBannerGeneral();" style="overflow-x: hidden;">
+  <body
+    onload="showTournament(); stopBannerGeneral();"
+    style="overflow-x: hidden"
+  >
     <!-- Navbar -->
     <div include-html="/html/partials/navbar.html" class="sticky-top"></div>
 
@@ -48,9 +51,9 @@
       </div>
     </header>
 
-    <br/>
+    <br />
 
-    <div class="padding" style="text-align: center;">
+    <div class="padding" style="text-align: center">
       <div class="col-md-12">
         <div
           class="wow fadeInUp animated"
@@ -73,19 +76,9 @@
             Selezionando il nome del torneo avrete accesso ai dati riguardanti
             <b>calendari</b>, <b>classifiche</b> e <b>squadre</b>.
           </p>
-          <p>
-            <b>Attenzione</b>: per agevolare la navigazione questa sezione fa utilizzo di cookie,
-            procedendo in questa pagina l'utente ne accetta l'uso.<br>
-            I cookie non registrano alcuna informazione personale su un utente 
-            e gli eventuali dati identificabili non verranno memorizzati.<br>
-          </p>
-          <p>
-            Per maggiori informazioni visualizza la nostra <a href="/html/cookie.html">informativa sui cookie</a>.
-            <br />
-          </p>
         </div>
-        <br/>
-        <div class="row" style="width: 400px; margin: 0 auto;">
+        <br />
+        <div class="row" style="width: 400px; margin: 0 auto">
           <section class="content" id="content"></section>
         </div>
         <div class="row justify-content-center">
@@ -95,14 +88,44 @@
             target="_blank"
             class="btn btn-info my-1"
             role="button"
-            style="width: 15%;"
+            style="width: 15%"
           >
             Go
           </a>
         </div>
       </div>
     </div>
-    <br/>
+    <br />
+
+    <div class="padding" style="text-align: center">
+      <div class="col-md-12">
+        <div
+          class="wow fadeInUp animated"
+          data-wow-duration="2s"
+          data-wow-delay="0.2s"
+          style="
+            visibility: visible;
+            animation-duration: 2s;
+            animation-delay: 0.2s;
+            animation-name: fadeInUp;
+            font-size: small;
+          "
+        >
+          <p>
+            <b>Attenzione</b>: per agevolare la navigazione questa sezione fa
+            utilizzo di cookie.<br />
+            I cookie non registrano alcuna informazione personale su un utente e
+            gli eventuali dati identificabili non verranno memorizzati.<br />
+            Procedendo in questa pagina l'utente ne accetta l'uso.<br />
+          </p>
+          <p>
+            Per maggiori informazioni visualizza la nostra
+            <a href="/html/cookie.html">informativa sui cookie</a>.
+            <br />
+          </p>
+        </div>
+      </div>
+    </div>
 
     <!-- FootBar -->
     <div include-html="/html/partials/bottombar.html"></div>
