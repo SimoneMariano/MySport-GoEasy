@@ -10,7 +10,7 @@ function scrollToSection() {
         // Ora puoi accedere al DOM della finestra figlia in modo sicuro
         var targetElement = newWindow.document.getElementById("download");
         if (targetElement) {
-          var targetOffset = targetElement.offsetTop;
+          var targetOffset = targetElement.offsetTop-100; //il meno 100 serve per fare in modo che arrivi e si visualizzi un po' più in basso in modo tale da essere più gradevole
 
           if ("scrollBehavior" in document.documentElement.style) {
             // Il browser supporta lo scrolling smooth
@@ -30,7 +30,7 @@ function scrollToSection() {
       } else {
         console.error("La finestra figlia non è stata completamente caricata.");
       }
-    }, 5); // Attendi 500 millisecondi prima di eseguire lo scrolling
+    }, 50); // Attendi 50 millisecondi prima di eseguire lo scrolling
   });
 
   // Invia un messaggio alla nuova pagina per richiedere lo scroll

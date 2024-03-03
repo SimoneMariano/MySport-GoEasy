@@ -187,7 +187,8 @@
             </p>
             <p style="color: white; top: 0px; font-size: 16px">
               Il sito web, l'app Android ed il programma Windows sono sempre in
-              continuo aggiornamento per offrirvi un servizio ottimale. Speriamo di soddisfare le vostre esigenze!
+              continuo aggiornamento per offrirvi un servizio ottimale. Speriamo
+              di soddisfare le vostre esigenze!
             </p>
           </div>
           <div class="col-md-4">
@@ -212,7 +213,7 @@
                 "
               >
                 Ottieni una prima visualizzazione sul web dei tornei
-                <i class="fa-solid fa-arrow-right" style="right: 0px;"></i>
+                <i class="fa-solid fa-arrow-right" style="right: 0px"></i>
               </a>
               <a
                 class="nav-link"
@@ -225,7 +226,7 @@
                 href="/html/manuale.html"
               >
                 Un'assistenza web completa ed ottimale all'utilizzo
-                <i class="fa-solid fa-arrow-right" style="right: 0px;"></i>
+                <i class="fa-solid fa-arrow-right" style="right: 0px"></i>
               </a>
               <a
                 class="nav-link"
@@ -236,9 +237,9 @@
                   font-size: 14.1px;
                 "
                 href="/html/about.html"
-                >
+              >
                 Cos'è e da dove nasce la nostra idea
-                <i class="fa-solid fa-arrow-right" style="right: 0px;"></i>
+                <i class="fa-solid fa-arrow-right" style="right: 0px"></i>
               </a>
             </div>
           </div>
@@ -289,7 +290,7 @@
     </div>
 
     <!-- FootBar -->
-    <footer class="bg-dark text-white text-center py-4 mt-4">
+    <footer class="bg-dark text-white text-center py-4 mt-4" id="footer" style="  bottom: 0; position: sticky;">
       <div class="container">
         <div class="row">
           <div class="col-6">
@@ -311,6 +312,22 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      // JavaScript per aggiustare il margin-bottom del contenuto per evitare sovrapposizioni con il footer
+      function adjustBodyHeight() {
+        var bodyHeight = document.body.scrollHeight;
+        var windowHeight = window.innerHeight;
+        var footerHeight = document.getElementById("footer").offsetHeight;
+
+        if (bodyHeight < windowHeight) {
+          document.body.style.height = windowHeight - footerHeight + "px";
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", adjustBodyHeight);
+      window.addEventListener("resize", adjustBodyHeight);
+    </script>
 
     <!-- Bootstrap JS -->
     <script
