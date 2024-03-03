@@ -38,7 +38,10 @@
   <body onload="stopBannerGeneral();">
     <!-- Navbar -->
     <div include-html="/html/partials/navbar.html" class="sticky-top"></div>
+
     <br>
+
+    <!-- Intro -->
     <header class="jumbotron">
       <div class="container">
         <h1 class="display-4">
@@ -47,8 +50,10 @@
       </div>
     </header>
 
+    <!-- Primo blocco -->
     <section class="container">
       <div class="row">
+        <!-- Prima immagine -->
         <div
           class="col-10 col-md-4"
           style="
@@ -77,6 +82,7 @@
             Screenshot 1: Vista Startup
           </div>
         </div>
+        <!-- Primo paragrafo -->
         <div class="txt_1 text-black text-align col-12 col-md-6">
           <h2>Cosa è?</h2>
           <p>
@@ -99,9 +105,13 @@
         </div>
       </div>
     </section>
+
     <br>
+
+    <!-- Secondo blocco -->
     <section class="container">
       <div class="row">
+        <!-- Secondo paragrafo -->
         <div class="col-md-6">
           <h2>L'idea di partenza</h2>
           <p>
@@ -121,6 +131,7 @@
             utilizzabile al meglio da tutti, gestori ed utenti.
           </p>
         </div>
+        <!-- Seconda immagine -->
         <div
           class="col-8 col-md-4 justify-content-md-center"
           style="
@@ -147,7 +158,78 @@
         </div>
       </div>
     </section>
+
     <br>
+
+    <!-- Form Contattaci -->
+    <div class="container">
+      <div class="row justify justify-content-center">
+        <div class="col-11 col-md-8 col-lg-6 col-xl-5">
+          <form
+            action="mailto:simone.mariano1301@gmail.com"
+            method="get"
+            enctype="text/plain"
+          >
+            <div class="card bg-dark" style="border-radius: 3em; padding: 10px">
+              <div class="row mt-0">
+                <div class="col-md-12">
+                  <h3 class="text" style="text-align: center; color: #42dbf0">
+                    Contattaci
+                  </h3>
+                  <p style="color: white; text-align: center">
+                    Usa questo spazio per condividere con noi domande, idee,
+                    commenti, feedback e segnalare eventuali problemi
+                  </p>
+                </div>
+              </div>
+              <div class="form-group row mb-3">
+                <div class="col-md-12 mb-0">
+                  <p class="mb-1" style="color: white">Email</p>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="esempio@provider.com"
+                    name="email"
+                    class="form-control input-box rm-border"
+                    style="border-radius: 3em"
+                    required="required"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12 mb-2">
+                  <p class="mb-1" style="color: white">Messaggio</p>
+                  <textarea
+                    id="messaggio"
+                    name="messaggio"
+                    type="text"
+                    placeholder="Inserisci il tuo messaggio"
+                    class="form-control input-box rm-border"
+                    style="border-radius: 3em"
+                    required="required"
+                  ></textarea>
+                </div>
+              </div>
+              <div
+                class="form-group row justify-content-center mb-0"
+                style="text-align: center"
+              >
+                <div class="col-md-12 px-3">
+                  <input
+                    type="submit"
+                    value="Invia"
+                    class="btn btn-block btn-outline-info rm-border"
+                    style="border-radius: 3em"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <br />
 
     <!-- FootBar -->
     <div include-html="/html/partials/bottombar.html"></div>
