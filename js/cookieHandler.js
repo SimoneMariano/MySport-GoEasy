@@ -27,10 +27,10 @@ function checkCookie() {
   }
 }
 
-function setCookie() {
+function setCookie(code) {
   document.cookie = "cartella=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 
-  var cartella = $("#form").val();
+  var cartella = code;
   //console.log(cartella);
 
   var d = new Date();

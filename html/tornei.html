@@ -78,20 +78,31 @@
           </p>
         </div>
         <br />
-        <div class="row" style="width: 400px; margin: 0 auto">
-          <section class="content" id="content"></section>
-        </div>
-        <div class="row justify-content-center">
-          <a
-            onclick="setCookie();"
-            href="/html/tornei/calendario.html"
-            target="_blank"
-            class="btn btn-info my-1"
-            role="button"
-            style="width: 15%"
-          >
-            Go
-          </a>
+        <div class="bg-dark text-center py-4 mt-4">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-6 justify-content-center" style="color: white">
+                <p>
+                  Una volta selezionato il torneo verrà richiesto il
+                  <b>codice adesione</b><br />
+                  <a style="color: gray; font-size: small;"> (ex. 12_345 o 12_345_67 o 12_345_AB)</a><br />
+                  Il codice può essere richiesto all'organizzatore o al proprio referente
+                </p>
+              </div>
+              <div class="col-md-4 justify-content-center">
+                <section class="content" id="content"></section>
+              </div>
+              <div class="col-md-2 justify-content-center">
+                <a
+                  onclick="showPopup(event);"
+                  class="btn btn-info my-1"
+                  role="button"
+                >
+                  Go
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
