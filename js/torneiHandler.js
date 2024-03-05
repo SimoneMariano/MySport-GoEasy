@@ -58,6 +58,6 @@ function showPopup(event) {
       });
     });
   } else {
-    window.alert("sometext");
+    window.alert("Codice inserito inesistente o errato");
   }
 }
