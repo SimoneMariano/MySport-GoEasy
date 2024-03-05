@@ -30,33 +30,34 @@ function resettaForm() {
 function showPopup(event) {
   event.preventDefault(); // Prevents the default form submission behavior
 
-  var formSelect = document.getElementById('form'); // Get the select element
+  var formSelect = document.getElementById("form"); // Get the select element
   var selectedOption = formSelect.options[formSelect.selectedIndex].value;
+  var selectedText = formSelect.options[formSelect.selectedIndex].text;
 
   var userInput = prompt("Inserisci il codice adesione:"); // Show prompt for user input
 
-  if (userInput !== null) {
+  if (selectedOption === userInput) {
     // If user clicked "OK"
     var nomeFile = "/data/codiciTornei.txt";
-  $.get(nomeFile, function (file) {
-    var riga = file.split("\n");
-    $.each(riga, function (elem) {
-      if (riga[elem] == "") {
-        return;
-      }
-      var data = riga[elem].split(",");
-      if (data[8] == "\r") {
-        data[8] = "";
-      }
-      console.log(data);
-      console.log(selectedOption);
-      if (selectedOption === data[0]) {
-        var code = data[0];
-        setCookie(code);
-      }
+    $.get(nomeFile, function (file) {
+      var riga = file.split("\n");
+      $.each(riga, function (elem) {
+        if (riga[elem] == "") {
+          return;
+        }
+        var data = riga[elem].split(",");
+        if (data[8] == "\r") {
+          data[8] = "";
+        }
 
+        if (selectedOption === data[0]) {
+          var code = data[0];
+          setCookie(code);
+          window.open("/html/tornei/calendario.html", "_blank");
+        }
+      });
     });
-  });
+  } else {
+    window.alert("sometext");
   }
-  window.open("/html/tornei/calendario.html", "_blank");
 }
