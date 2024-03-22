@@ -21,12 +21,12 @@ if ($squadraFilter == "" && $giornoFilter == "" && $giornataFilter == "") {
 } elseif ($squadraFilter != "" && $giornoFilter != "" && $giornataFilter == "") {
     $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
      AND (squadraCasa = ('$squadraFilter') OR squadraTrasferta = ('$squadraFilter'))
-     AND  DATE(orarioGara) = ('$giornoFilter');";
+     AND  DATE(orarioGara) >= ('$giornoFilter');";
      $result = mysqli_query($conn, $sql);
 } elseif ($squadraFilter != "" && $giornoFilter != "" && $giornataFilter != "") {
     $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
      AND (squadraCasa = ('$squadraFilter') OR squadraTrasferta = ('$squadraFilter'))
-     AND  DATE(orarioGara) = ('$giornoFilter') AND numeroGiornata = ('$giornataFilter');";
+     AND  DATE(orarioGara) >= ('$giornoFilter') AND numeroGiornata = ('$giornataFilter');";
      $result = mysqli_query($conn, $sql);
 } elseif ($squadraFilter == '' && $giornoFilter == '' && $giornataFilter != "") {
     $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
@@ -34,7 +34,7 @@ if ($squadraFilter == "" && $giornoFilter == "" && $giornataFilter == "") {
      $result = mysqli_query($conn, $sql);
 } elseif ($squadraFilter == '' && $giornoFilter != "" && $giornataFilter != "") {
     $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
-     AND  DATE(orarioGara) = ('$giornoFilter') AND numeroGiornata = ('$giornataFilter');";
+     AND  DATE(orarioGara) >= ('$giornoFilter') AND numeroGiornata = ('$giornataFilter');";
      $result = mysqli_query($conn, $sql);
 } elseif ($squadraFilter != "" && $giornoFilter == '' && $giornataFilter != "") {
     $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
@@ -43,7 +43,7 @@ if ($squadraFilter == "" && $giornoFilter == "" && $giornataFilter == "") {
      $result = mysqli_query($conn, $sql);
 } elseif ($squadraFilter == '' && $giornoFilter!= "" && $giornataFilter == '') {
     $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
-     AND  DATE(orarioGara) = ('$giornoFilter');";
+     AND  DATE(orarioGara) >= ('$giornoFilter');";
     $result = mysqli_query($conn, $sql);
 }
 
