@@ -1,20 +1,26 @@
 function showTournament() {
-  var nomeFile = "/data/codiciTornei.txt";
-  $.get(nomeFile, function (file) {
+  $(document).ready(function () {
     resettaForm();
-    var riga = file.split("\n");
-    $.each(riga, function (elem) {
-      if (riga[elem] == "") {
-        return;
-      }
-      var data = riga[elem].split(",");
-      var row = "";
-      if (data[8] == "\r") {
-        data[8] = "";
-      }
-      row = $('<option value="' + data[0] + '">' + data[1] + "</option>");
-      //console.log(data);
-      $("#form").append(row);
+    $.ajax({
+      url: "/MySport-GoEasy/php/torneiHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
+      method: "GET",
+      success: function (response) {
+        var data = JSON.parse(response);
+        var dataList = $("#form");
+        // Loop attraverso i dati e aggiungi elementi alla lista
+        for (var i = 0; i < data.length; i++) {
+          dataList.append(
+            '<option value="' +
+              data[i].codiceTorneo +
+              '">' +
+              data[i].nomeTorneo +
+              "</option>"
+          );
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error("Error:", error);
+      },
     });
   });
 }
@@ -28,34 +34,36 @@ function resettaForm() {
 }
 
 function showPopup(event) {
+  
   event.preventDefault(); // Prevents the default form submission behavior
 
   var formSelect = document.getElementById("form"); // Get the select element
   var selectedOption = formSelect.options[formSelect.selectedIndex].value;
-  var selectedText = formSelect.options[formSelect.selectedIndex].text;
-
   var userInput = prompt("Inserisci il codice adesione:"); // Show prompt for user input
 
   if (selectedOption === userInput) {
     // If user clicked "OK"
-    var nomeFile = "/data/codiciTornei.txt";
-    $.get(nomeFile, function (file) {
-      var riga = file.split("\n");
-      $.each(riga, function (elem) {
-        if (riga[elem] == "") {
-          return;
-        }
-        var data = riga[elem].split(",");
-        if (data[8] == "\r") {
-          data[8] = "";
-        }
 
-        if (selectedOption === data[0]) {
-          var code = data[0];
-          setCookie(code);
-          window.open("/html/tornei/calendario.html", "_blank");
+    $.ajax({
+      url: "/MySport-GoEasy/php/torneiHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
+      method: "GET",
+      success: function (response) {
+        console.log(response);
+        var data = JSON.parse(response);
+        for (var i = 0; i < data.length; i++) {
+          if (selectedOption === data[i].codiceTorneo) {
+            var code = data[i].codiceTorneo;
+            setCookie(code);
+            window.open(
+              "/MySport-GoEasy/html/tornei/calendario.html",
+              "_blank"
+            );
+          }
         }
-      });
+      },
+      error: function (xhr, status, error) {
+        console.error("Error:", error);
+      },
     });
   } else {
     window.alert("Codice inserito inesistente o errato");

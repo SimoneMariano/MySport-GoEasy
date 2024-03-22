@@ -15,10 +15,11 @@
 
     <!-- Script -->
     <!-- Script including HTML -->
-    <script src="/html/partials/includeHTML.js"></script>
-    <script src="/js/cookieHandler.js"></script>
-    <script src="/js/calendarioHandler.js"></script>
-    <script src="/js/bannerHandler.js"></script>
+    <script src="/MySport-GoEasy/html/partials/includeHTML.js"></script>
+    <script src="/MySport-GoEasy/js/titleHandler.js"></script>
+    <script src="/MySport-GoEasy/js/cookieHandler.js"></script>
+    <script src="/MySport-GoEasy/js/calendarioHandler.js"></script>
+    <script src="/MySport-GoEasy/js/bannerHandler.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
 
@@ -26,9 +27,9 @@
     onload="completeCalendar(); titleAppend(); showSquad(); showGiornate(); stopBannerGeneral();"
   >
     <!-- Topimage -->
-    <div include-html="/html/partials/topimage.html"></div>
+    <div include-html="/MySport-GoEasy/html/partials/topimage.html"></div>
     <!-- Navbar -->
-    <div include-html="/html/partials/navbar.html" class="sticky-top"></div>
+    <div include-html="/MySport-GoEasy/html/partials/navbar.html" class="sticky-top"></div>
 
     <br />
 
@@ -37,14 +38,14 @@
     <div class="container" style="width: fit-content">
       <a
         class="btn btn-primary"
-        href="/html/tornei/classifiche.html"
+        href="/MySport-GoEasy/html/tornei/classifiche.html"
         role="button"
         style="font-size: small; padding: 2px"
         >Classifica</a
       >
       <a
         class="btn btn-primary"
-        href="/html/tornei/squadre.html"
+        href="/MySport-GoEasy/html/tornei/squadre.html"
         role="button"
         style="font-size: small; padding: 2px"
         >Squadre</a
@@ -94,7 +95,7 @@
       <div class="row" style="padding-top: 3px">
         <div class="col text-center">
           <a
-            onclick="setFilter();"
+            onclick="completeCalendar();"
             target="_blank"
             class="btn btn-primary my-1"
             role="button"
@@ -105,7 +106,7 @@
         </div>
         <div class="col text-center">
           <a
-            onclick="completeCalendar();"
+            onclick="resetCalendar();"
             target="_blank"
             class="btn btn-secondary my-1"
             role="button"
@@ -175,7 +176,7 @@
     </a>
 
     <!-- FootBar -->
-    <div include-html="/html/partials/bottombar.html"></div>
+    <div include-html="/MySport-GoEasy/html/partials/bottombar.html"></div>
 
     <!-- Bootstrap JS -->
     <script

@@ -1,5 +1,5 @@
 function scrollToSection() {
-  var newWindow = window.open("/html/info.html");
+  var newWindow = window.open("/MySport-GoEasy/html/info.html");
 
   // Ascolta l'evento 'load' sulla finestra appena aperta
   newWindow.addEventListener("load", function () {

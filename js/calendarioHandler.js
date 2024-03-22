@@ -3,169 +3,170 @@
     ASSICURARSI DI INCLUDERE IL FILE ""PRIMA"" DELL'INCLUSIONE
     DI QUESTO JS ALL'INTERNO DELL'HTML.
 */
+function resetCalendar() {
+  resettaSquad();
+  $("#dateStandard").val('');
+  resettaGiornate();
+  completeCalendar();
+}
 
 function completeCalendar() {
   checkCookie();
-  var nome = getCookie("cartella");
-  var nomeFile = "/data/" + nome + "/" + nome + "_Calendario.dat";
+  var cookie = getCookie("cartella");
+  var squadraFilter = $("#form1").val();
+  var giornoFilter = $("#dateStandard").val();
+  var giornataFilter = $("#form2").val()
+
+  if (!squadraFilter || squadraFilter === 'Selez. il team') {squadraFilter = '';}
+  if (!giornoFilter) {giornoFilter = '';}
+  if (!giornataFilter || giornataFilter === 'Selez. la giornata') {giornataFilter = '';}
+
+
+  console.log(giornoFilter);
+
   $(".tabella").html("");
-  $.get(nomeFile, function (file) {
-    var riga = file.split("\n");
-    $.each(riga, function (elem) {
-      if (riga[elem] == "") {
-        return;
-      }
-      var data = riga[elem].split(",");
-      var row = "";
-      if (data[8] == "\r") {
-        data[8] = "";
-      }
+  $(document).ready(function () {
+    $.ajax({
+      url: "/MySport-GoEasy/php/calendarioHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
+      method: "POST",
+      data: { cookie: cookie, squadraFilter: squadraFilter, giornoFilter: giornoFilter, giornataFilter: giornataFilter},
+      success: function (response) {
+        console.log(response);
+        var data = JSON.parse(response);
+        var dataList = $("#tabella");
+        // Loop attraverso i dati e aggiungi elementi alla lista
+        for (var i = 0; i < data.length; i++) {
+          img1 = data[i].squadraCasa + ".jpg";
+          img2 = data[i].squadraTrasferta + ".jpg";
 
-      img1 = data[2] + ".jpg";
-      img2 = data[3] + ".jpg";
+          var risultato = data[i].punteggio.split("/");
 
-      var risultato = data[6].split("/");
+          if (risultato[0] == "0-0") {
+            risultato[1] = "0-0";
+            risultato[2] = "0-0";
+            risultato[3] = "0-0";
+            risultato[4] = "0-0";
+            risultato[5] = "0-0";
+          }
 
-      if (risultato[0] == "0-0") {
-        risultato[1] = "0-0";
-        risultato[2] = "0-0";
-        risultato[3] = "0-0";
-        risultato[4] = "0-0";
-        risultato[5] = "0-0";
-      }
+          if (data[i].arFlag == "A") {
+            data[i].arFlag = "Andata";
+          }
+          if (data[i].arFlag == "R") {
+            data[i].arFlag = "Ritorno";
+          }
+          if (data[i].noteArbitro == "-") {
+            data[i].noteArbitro = "";
+          }
 
-      row = $(
-        '<div class="rigaTab" style="padding-bottom: 5px;" id="_' +
-          data[0] +
-          '">' +
-          '<div class="row">' +
-          '<div class="row">' +
-          '<div class="col py-0">' +
-          '<div class="text-center fw-bolder">[Part.N.: ' +
-          data[0] +
-          "] [Girone: " +
-          data[7] +
-          "] [Giornata:" +
-          data[1] +
-          "]</div>" +
-          "</div>" +
-          "</div>" +
-          '<div class="row">' +
-          '<div class="col py-0">' +
-          '<div class="text-center">' +
-          data[4] +
-          " - Arb.: " +
-          data[5] +
-          "</div>" +
-          "</div>" +
-          "</div>" +
-          '<div class="row">' +
-          '<div class="col-6">' +
-          '<img class="d-inline-block rounded" src="/data/' +
-          nome +
-          "/icon/" +
-          img1 +
-          '" style="padding: 5px; max-width: 50px" />' +
-          '<div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
-          data[2] +
-          "</div>" +
-          "</div>" +
-          '<div class="col-6">' +
-          '<img class="d-inline-block rounded"src="/data/' +
-          nome +
-          "/icon/" +
-          img2 +
-          '" style="padding: 5px; max-width: 50px" />' +
-          '<div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
-          data[3] +
-          "</div>" +
-          "</div>" +
-          "</div>" +
-          "</div>" +
-          '<div class="row">' +
-          '<div class="col py-0">' +
-          '<div class="text-center text-danger fw-bolder">Ris. = ' +
-          risultato[0] +
-          " [" +
-          risultato[1] +
-          "/" +
-          risultato[2] +
-          "/" +
-          risultato[3] +
-          "/" +
-          risultato[4] +
-          "/" +
-          risultato[5] +
-          "]</div>" +
-          "</div>" +
-          "</div>" +
-          '<div class="row">' +
-          '<div class="col py-0">' +
-          '<div class="text-center">' +
-          data[8] +
-          "</div></div>" +
-          "</div></div></div>"
-      );
-      //console.log(data);
-      if (data[0] != "undefined" || data[0] != "" || data[0] != " ") {
-        $("#tabella").append(row);
-      }
-    });
-  });
-}
-
-function titleAppend() {
-  $(".tabellone").html("");
-  var nome = getCookie("cartella");
-  var nomeFile = "/data/codiciTornei.txt";
-  $.get(nomeFile, function (file) {
-    var riga = file.split("\n");
-    $.each(riga, function (elem) {
-      if (riga[elem] == "") {
-        return;
-      }
-      var data = riga[elem].split(",");
-      var row = "";
-      var titolo = "";
-      if (data[0] == nome) {
-        titolo = data[1];
-        row = $(
-          '<h3 class="text-black" align=center>Calendario torneo ' +
-            titolo +
-            "</h3>"
-        );
-      }
-      $("#tabellone").append(row);
+          dataList.append(
+            '<div class="rigaTab" style="padding-bottom: 5px;" id="_' +
+              data[i].numeroPartita +
+              '">' +
+              '<div class="row">' +
+              '<div class="row">' +
+              '<div class="col py-0">' +
+              '<div class="text-center fw-bolder">[Part.N.: ' +
+              data[i].numeroPartita +
+              "] [Girone: " +
+              data[i].arFlag +
+              "] [Giornata:" +
+              data[i].numeroGiornata +
+              "]</div>" +
+              "</div>" +
+              "</div>" +
+              '<div class="row">' +
+              '<div class="col py-0">' +
+              '<div class="text-center">' +
+              data[i].orarioGara +
+              " - Arb.: " +
+              data[i].nomeArbitro +
+              "</div>" +
+              "</div>" +
+              "</div>" +
+              '<div class="row">' +
+              '<div class="col-6">' +
+              '<img class="d-inline-block rounded" src="/MySport-GoEasy/data/' +
+              data[i].codiceTorneo +
+              "/icon/" +
+              img1 +
+              '" style="padding: 5px; max-width: 50px" />' +
+              '<div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
+              data[i].squadraCasa +
+              "</div>" +
+              "</div>" +
+              '<div class="col-6">' +
+              '<img class="d-inline-block rounded"src="/MySport-GoEasy/data/' +
+              data[i].codiceTorneo +
+              "/icon/" +
+              img2 +
+              '" style="padding: 5px; max-width: 50px" />' +
+              '<div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
+              data[i].squadraTrasferta +
+              "</div>" +
+              "</div>" +
+              "</div>" +
+              "</div>" +
+              '<div class="row">' +
+              '<div class="col py-0">' +
+              '<div class="text-center text-danger fw-bolder">Ris. = ' +
+              risultato[0] +
+              " [" +
+              risultato[1] +
+              "/" +
+              risultato[2] +
+              "/" +
+              risultato[3] +
+              "/" +
+              risultato[4] +
+              "/" +
+              risultato[5] +
+              "]</div>" +
+              "</div>" +
+              "</div>" +
+              '<div class="row">' +
+              '<div class="col py-0">' +
+              '<div class="text-center">' +
+              data[i].noteArbitro +
+              "</div></div>" +
+              "</div></div></div>"
+          );
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error("Error:", error);
+      },
     });
   });
 }
 
 function showSquad() {
   checkCookie();
-  var nome = getCookie("cartella");
-  var nomeFile = "/data/" + nome + "/" + nome + "_Squadre.dat";
-  $.get(nomeFile, function (file) {
+  var cookie = getCookie("cartella");
+  $(document).ready(function () {
     resettaSquad();
-    var riga = file.split("\n");
-    $.each(riga, function (elem) {
-      if (riga[elem] == "") {
-        return;
-      }
-      var data = riga[elem].split(",");
-      var row = "";
-      if (data[8] == "\r") {
-        data[8] = "";
-      }
-      row = $('<option value="' + data[0] + '">' + data[0] + "</option>");
-      //console.log(data);
-      if (
-        data[0] != "undefined" ||
-        data[0] != "" ||
-        data[0] != " " ||
-        data[0] != null
-      ) {
-        $("#form").append(row);
-      }
+    $.ajax({
+      url: "/MySport-GoEasy/php/formCalendarHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
+      method: "POST",
+      data: { cookie: cookie },
+      success: function (response) {
+        //console.log(response);
+        var data = JSON.parse(response);
+        var dataList = $("#form1");
+        // Loop attraverso i dati e aggiungi elementi alla lista
+        for (var i = 0; i < data.length; i++) {
+          dataList.append(
+            '<option value="' +
+              data[i].nomeSquadra +
+              '">' +
+              data[i].nomeSquadra +
+              "</option>"
+          );
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error("Error:", error);
+      },
     });
   });
 }
@@ -173,34 +174,42 @@ function showSquad() {
 function resettaSquad() {
   $(".squadre").html("");
   row = $(
-    '<select class="form-select" id="form" name="form" aria-label="Default select example"><option selected>Selez. il team</option></select>'
+    '<select class="form-select" id="form1" name="form1" aria-label="Default select example"><option selected>Selez. il team</option></select>'
   );
   $(".squadre").append(row);
 }
 
 function showGiornate() {
   checkCookie();
-  var nome = getCookie("cartella");
-  var nomeFile = "/data/" + nome + "/" + nome + "_Calendario.dat";
-  var indice = 1;
-  $.get(nomeFile, function (file) {
-    resettaGiornate();
-    var riga = file.split("\n");
-    $.each(riga, function (elem) {
-      if (riga[elem] == "") {
-        return;
-      }
-      var data = riga[elem].split(",");
-      var row = "";
-      if (data[8] == "\r") {
-        data[8] = "";
-      }
-      if (indice == data[1]) {
-        indice = data[1];
-        row = $('<option value="' + data[1] + '">' + data[1] + "</option>");
-        indice++;
-        $("#form2").append(row);
-      }
+  var cookie = getCookie("cartella");
+  resettaGiornate();
+  $(document).ready(function () {
+    $.ajax({
+      url: "/MySport-GoEasy/php/giornateCalendarHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
+      method: "POST",
+      data: { cookie: cookie },
+      success: function (response) {
+        //console.log(response);
+        var data = JSON.parse(response);
+        var dataList = $("#form2");
+        // Loop attraverso i dati e aggiungi elementi alla lista
+        var temp = "";
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].numeroGiornata != temp) {
+            dataList.append(
+              '<option value="' +
+                data[i].numeroGiornata +
+                '">' +
+                data[i].numeroGiornata +
+                "</option>"
+            );
+            temp = data[i].numeroGiornata;
+          }
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error("Error:", error);
+      },
     });
   });
 }
@@ -213,9 +222,10 @@ function resettaGiornate() {
   $(".giornate").append(row);
 }
 
-function setFilter() {
+/*function setFilter() {
   var nomeFilter = $("#form").val();
   var giornoFilter = $("#dateStandard").val();
+  console.log(giornoFilter);
   var giornata = $("#form2").val();
   var modificaGiornoFilter = giornoFilter.split("-");
   giornoFilter =
@@ -237,12 +247,12 @@ function setFilter() {
       }
       var data = riga[elem].split(",");
       var row = "";
-      if (data[8] == "\r") {
-        data[8] = "";
+      if (data[i].noteArbitro == "\r") {
+        data[i].noteArbitro = "";
       }
 
-      img1 = data[2] + ".jpg";
-      img2 = data[3] + ".jpg";
+      img1 = data[i].squadraCasa + ".jpg";
+      img2 = data[i].squadraTrasferta + ".jpg";
 
       var risultato = data[6].split("/");
 
@@ -254,7 +264,7 @@ function setFilter() {
         risultato[5] = "0-0";
       }
 
-      var giorno1 = data[4].split(" ");
+      var giorno1 = data[i].orarioGara.split(" ");
       var giorno2 = giorno1[0];
       var oggi = Date.now();
       var oggiGiorno = new Date(oggi).getDate();
@@ -263,19 +273,23 @@ function setFilter() {
       oggi = oggiGiorno + "/" + oggiMese + "/" + oggiAnno;
 
       if (
-        ((nomeFilter == data[2] || nomeFilter == data[3]) &&
+        ((nomeFilter == data[i].squadraCasa ||
+          nomeFilter == data[i].squadraTrasferta) &&
           giornoFilter == giorno2 &&
           giornata == data[1]) ||
         (nomeFilter == "Selez. il team" &&
           giornoFilter == giorno2 &&
           giornata == "Selez. la giornata") ||
-        ((nomeFilter == data[2] || nomeFilter == data[3]) &&
+        ((nomeFilter == data[i].squadraCasa ||
+          nomeFilter == data[i].squadraTrasferta) &&
           giornoFilter == "undefined/undefined/" &&
           giornata == "Selez. la giornata") ||
-        ((nomeFilter == data[2] || nomeFilter == data[3]) &&
+        ((nomeFilter == data[i].squadraCasa ||
+          nomeFilter == data[i].squadraTrasferta) &&
           giornoFilter == giorno2 &&
           giornata == "Selez. la giornata") ||
-        ((nomeFilter == data[2] || nomeFilter == data[3]) &&
+        ((nomeFilter == data[i].squadraCasa ||
+          nomeFilter == data[i].squadraTrasferta) &&
           giornoFilter == "undefined/undefined/" &&
           giornata == data[1]) ||
         (nomeFilter == "Selez. il team" &&
@@ -287,13 +301,13 @@ function setFilter() {
       ) {
         row = $(
           '<div class="rigaTab" style="padding-bottom: 5px;" id="_' +
-            data[0] +
+            data[i].numeroPartita +
             '">' +
             '<div class="row">' +
             '<div class="row">' +
             '<div class="col py-0">' +
             '<div class="text-center fw-bolder">[Part.N.: ' +
-            data[0] +
+            data[i].numeroPartita +
             "] [Girone: " +
             data[7] +
             "] [Giornata:" +
@@ -304,9 +318,9 @@ function setFilter() {
             '<div class="row">' +
             '<div class="col py-0">' +
             '<div class="text-center">' +
-            data[4] +
+            data[i].orarioGara +
             " - Arb.: " +
-            data[5] +
+            data[i].nomeArbitro +
             "</div>" +
             "</div>" +
             "</div>" +
@@ -318,7 +332,7 @@ function setFilter() {
             img1 +
             '" style="padding: 5px; max-width: 50px" />' +
             '<div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
-            data[2] +
+            data[i].squadraCasa +
             "</div>" +
             "</div>" +
             '<div class="col-6">' +
@@ -328,7 +342,7 @@ function setFilter() {
             img2 +
             '" style="padding: 5px; max-width: 50px" />' +
             '<div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
-            data[3] +
+            data[i].squadraTrasferta +
             "</div>" +
             "</div>" +
             "</div>" +
@@ -353,15 +367,19 @@ function setFilter() {
             '<div class="row">' +
             '<div class="col py-0">' +
             '<div class="text-center">' +
-            data[8] +
+            data[i].noteArbitro +
             "</div></div>" +
             "</div></div></div>"
         );
         //console.log(data);
-        if (data[0] != "undefined" || data[0] != "" || data[0] != " ") {
+        if (
+          data[i].numeroPartita != "undefined" ||
+          data[i].numeroPartita != "" ||
+          data[i].numeroPartita != " "
+        ) {
           $("#tabella").append(row);
         }
       }
     });
   });
-}
+}*/
