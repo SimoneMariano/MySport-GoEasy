@@ -39,6 +39,9 @@ function showPopup(event) {
 
   var formSelect = document.getElementById("form"); // Get the select element
   var selectedOption = formSelect.options[formSelect.selectedIndex].value;
+
+  if (selectedOption == 'Seleziona il campionato') {return}
+
   var userInput = prompt("Inserisci il codice adesione:"); // Show prompt for user input
 
   if (selectedOption === userInput) {
