@@ -13,7 +13,7 @@ function titleAppend() {
         // Loop attraverso i dati e aggiungi elementi alla lista
         for (var i = 0; i < data.length; i++) {
           dataList.append(
-            '<h3 class="text-black" align=center>Squadre torneo ' +
+            '<h3 class="text-black" align=center>Torneo ' +
               data[i].nomeTorneo +
               "</h3>"
           );

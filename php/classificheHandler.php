@@ -1,11 +1,16 @@
 <?php
-$conn = require '/php/dbConnection.php';
+require "./dbConnection.php";
 
-$code = '22_533';
+if ($conn->connect_error) {
+    die("Connessione fallita: " . $conn->connect_error);
+}
+
+$cookie = $_POST['cookie'];
 
 // Esegui una query per estrarre i dati
-$sql = "SELECT nomeTorneo FROM torneo WHERE torneo.codiceTorneo = '$code';";
+$sql = "SELECT * FROM classifica WHERE codiceTorneo = ('$cookie') ORDER BY posizioneClassifica;";
 $result = mysqli_query($conn, $sql);
+
 
 $data = array();
 
@@ -20,4 +25,3 @@ if ($result->num_rows > 0) {
 }
 
 $conn->close();
-?>
