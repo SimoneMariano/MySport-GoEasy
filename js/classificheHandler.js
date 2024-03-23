@@ -36,7 +36,7 @@
               data[i].codiceTorneo +
               '/icon/'+
               data[i].nomeSquadra +
-              '.jpg" class="img-fluid rounded-start" /></div><div class="col-lg-8"><div class="card-body"><h5 class="card-title">Pozione: '+
+              '.jpg" class="img-fluid rounded-start" /></div><div class="col-lg-8"><div class="card-body"><h5 class="card-title">Posizione: '+
               data[i].posizioneClassifica +
               '</h5><p class="card-text">'+
               data[i].nomeSquadra +
