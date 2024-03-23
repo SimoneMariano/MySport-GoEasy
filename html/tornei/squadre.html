@@ -40,35 +40,63 @@
 
     <!-- Body -->
 
-    <div class="container" style="width: fit-content">
-      <a
-        class="btn btn-primary"
-        href="/MySport-GoEasy/html/tornei/classifiche.html"
-        role="button"
-        style="font-size: small; padding: 2px"
-        >Classifica</a
-      >
-      <a
-        class="btn btn-primary"
-        href="/MySport-GoEasy/html/tornei/calendario.html"
-        role="button"
-        style="font-size: small; padding: 2px"
-        >Calendario</a
-      >
+    <div class="container-fluid" style="width: 100%">
+      <div class="row" style="width: 100%">
+        <div class="col" align="left">
+          <i
+            class="fa-solid fa-chevron-right fa-flip-horizontal"
+            style="color: #42dbf0"
+          ></i>
+          <a
+            href="/MySport-GoEasy/html/tornei/classifiche.html"
+            role="button"
+            class="btn"
+            style="
+              border-radius: 3em;
+              background: #42dbf0;
+              border-color: #42dbf0;
+              color: black;
+            "
+            >Classifica</a
+          >
+        </div>
+
+        <div class="col" align="center">
+          <section class="tabellone" id="tabellone"></section>
+        </div>
+
+        <div class="col" align="right">
+          <a
+            href="/MySport-GoEasy/html/tornei/calendario.html"
+            role="button"
+            class="btn"
+            style="
+              border-radius: 3em;
+              background: #42dbf0;
+              border-color: #42dbf0;
+              color: black;
+            "
+            >Calendario</a
+          >
+          <i class="fa-solid fa-chevron-right" style="color: #42dbf0"></i>
+        </div>
+      </div>
     </div>
 
     <br />
 
-    <section class="tabellone" id="tabellone"></section>
-
-    <br />
-
-    <p class="text" align=center style="color: gray;">Premere su uno dei riquadri per ulteriori informazioni</p>
+    <p class="text" align="center" style="color: gray">
+      Premere su uno dei riquadri per ulteriori informazioni
+    </p>
 
     <br />
 
     <div class="container-fluid">
-      <div class="row" style="width: 100%; padding-bottom: 50px" id="content"></div>
+      <div
+        class="row"
+        style="width: 100%; padding-bottom: 50px"
+        id="content"
+      ></div>
     </div>
 
     <!-- FootBar -->

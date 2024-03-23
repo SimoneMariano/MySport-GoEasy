@@ -60,7 +60,7 @@ function showPopup(event) {
             var code = data[i].codiceTorneo;
             setCookie(code);
             window.open(
-              "/MySport-GoEasy/html/tornei/calendario.html",
+              "/MySport-GoEasy/html/tornei/squadre.html",
               "_blank"
             );
           }

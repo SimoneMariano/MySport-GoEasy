@@ -1,4 +1,5 @@
 function titleAppend() {
+  var nomePagina = window.document.title;
   $(".tabellone").html("");
   var cookie = getCookie("cartella");
   $(document).ready(function () {
@@ -13,7 +14,8 @@ function titleAppend() {
         // Loop attraverso i dati e aggiungi elementi alla lista
         for (var i = 0; i < data.length; i++) {
           dataList.append(
-            '<h3 class="text-black" align=center>Torneo ' +
+            '<h3 class="text-black" align=center>' +
+              nomePagina + ' ' +
               data[i].nomeTorneo +
               "</h3>"
           );
