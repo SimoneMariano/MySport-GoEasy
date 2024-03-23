@@ -5,157 +5,168 @@
 */
 
 function completeSquad() {
-    checkCookie();
-    var nome = getCookie("cartella");
-    var nomeFile = "/data/" + nome + "/" + nome + "_Squadre.dat";
-    $.get(nomeFile, function (file) {
-      var riga = file.split("\n");
-      var counter = 0;
-      $.each(riga, function (elem) {
-        if (riga[elem] == "") {
-          return;
-        }
-        var data = riga[elem].split(",");
-        //console.log(data);
-        var row = "";
-        if (data[8] == "\r" || data[8] == "undefined") {
-          data[8] = "";
-        }
-  
-        if (data[5] == 1) {
-          data[5] = "Lunedì";
-        } else if (data[5] == 2) {
-          data[5] = "Martedì";
-        } else if (data[5] == 3) {
-          data[5] = "Mercoledì";
-        } else if (data[5] == 4) {
-          data[5] = "Giovedì";
-        } else if (data[5] == 5) {
-          data[5] = "Venerdì";
-        } else if (data[5] == 6) {
-          data[5] = "Sabato";
-        } else if (data[5] == 7) {
-          data[5] = "Domenica";
-        }
-  
-        row = $(
-          '<div class="rigaTab row" style="padding: 3px">' +
-            '<div class="col-2 align-self-center">'+
-              '<img class="d-inline-block rounded"src="/data/'+ nome +'/icon/' + data[8] + '" style="max-width: 50px" />'+
-            '</div>' +
+  checkCookie();
+  var cookie = getCookie("cartella");
+  $.ajax({
+    url: "/MySport-GoEasy/php/squadreHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
+    method: "POST",
+    data: { cookie: cookie },
+    success: function (response) {
+      //console.log(response);
+      var data = JSON.parse(response);
+      var dataList = $("#content");
+      // Loop attraverso i dati e aggiungi elementi alla lista
+      for (var i = 0; i < data.length; i++) {
+        dataList.append(
+
+          '<div class="col-sm-4"><div class="card shadow p-3 mb-5 bg-body rounded" style="text-align: center; margin: 5px; this.hover: gray;" data-bs-toggle="modal" data-bs-target="#modal'+ 
+          i +
+          '"><div class="row g-0"><div class="col-lg-4"><img  style="margin-top: 4px;" src="/MySport-GoEasy/data/'+
+          data[i].codiceTorneo +
+          '/icon/'+
+          data[i].nomeSquadra +
+          '.jpg" class="img-fluid rounded-start" /></div><div class="col-lg-8"><div class="card-body"><h5 class="card-title">'+
+          data[i].nomeSquadra +
+          '</h5> </div></div><i class="fa-solid fa-caret-down fa-2xs" style="color: #c0c0c0;"></i></div></div></div>'+
+          '<div class="modal fade" id="modal' +
+          i +
+          '" style="text-align: center; aria-labelledby="ModalLabel' +
+          i +
+          '" aria-hidden="true" tabindex="-1"  margin: auto;">' +
+          '<div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="ModalLabel' + 
+          i +
+          '">Informazioni utili</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">' +
+          '<p class="text">Referente: '+
+          data[i].referenteSquadra +
+          ' ( Tel.: '+
+          data[i].telefono +
+          ' - Email: '+
+          data[i].email +
+          ' )</br>Giorno preferito: '+
+          data[i].giornoGaraPreferito+
+          ' - ' +
+          data[i].oraGaraPreferito +
+          ' </br>Indirizzo campo: ' +
+          '<a href="http://maps.google.com/?q=' +
+            data[i].indirizzoSquadra +
+            '" target="_blank">' +
+            data[i].indirizzoSquadra +
+            "</a>" +
+            ";" +
+          '</p></div></div></div></div>'
+
+          /*'<div class="rigaTab row" style="padding: 3px">' +
+            '<div class="col-2 align-self-center">' +
+            '<img class="d-inline-block rounded"src="/MySport-GoEasy/data/' +
+            data[i].codiceTorneo +
+            "/icon/" +
+            data[i].nomeSquadra +
+            '.jpg" style="max-width: 50px" />' +
+            "</div>" +
             '<div class="col-10 align-self-center text-start">' +
-              '<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">' +
-                '<div class="col fw-bold">' + data[0] + '</div>' +
-                '<div class="col">' + "All.: " + data[1] + ", " + data[2] + ", " + data[3] + ";" + '</div>' +
-                '<div class="col">' + "Campo: " +
-                  '<a href="http://maps.google.com/?q=' + data[4] + '" target="_blank">' + data[4] + "</a>" + ";" +
-                '</div>' +
-                '<div class="col">' + "Giorno: " + data[5] + ", " + data[6] + ';</div>' +
-              '</div>' +
-            '</div>' +
-          '</div>'
+            '<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">' +
+            '<div class="col fw-bold">' +
+            data[i].nomeSquadra +
+            "</div>" +
+            '<div class="col">' +
+            "All.: " +
+            data[i].referenteSquadra +
+            ", " +
+            data[i].telefono +
+            ", "+
+            data[i].email +
+            ";" +
+            "</div>" +
+            '<div class="col">' +
+            "Campo: " +
+            '<a href="http://maps.google.com/?q=' +
+            data[i].indirizzoSquadra +
+            '" target="_blank">' +
+            data[i].indirizzoSquadra +
+            "</a>" +
+            ";" +
+            "</div>" +
+            '<div class="col">' +
+            "Giorno: " +
+            data[i].giornoGaraPreferito +
+            ", " +
+            data[i].oraGaraPreferito +
+            ";</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>"*/
         );
-        //console.log(data);
-        if (data[0] != "undefined" || data[0] != "" || data[0] != " " || data[0] != null 
-          || data[0] !== "undefined" || data[0] !== "" || data[0] !== " " || data[0] !== null || counter <= riga.length ) {
-            $("#tabella").append(row);
-            counter++;
-        }
-      });
-    });
-  }
-
-  function titleAppend() {
-    $(".tabellone").html("");
-    var nome = getCookie("cartella");
-    var nomeFile = "/data/codiciTornei.txt";
-    $.get(nomeFile, function (file) {
-      var riga = file.split("\n");
-      $.each(riga, function (elem) {
-        if (riga[elem] == "") {
-          return;
-        }
-        var data = riga[elem].split(",");
-        var row = "";
-        var titolo = "";
-        if (data[0] == nome) {
-          titolo = data[1];
-          row = $(
-              '<h3 class="text-black" align=center>Squadre torneo ' + titolo + '</h3>'
-          );
-        }
-        $("#tabellone").append(row);
-      });
-    });
-  }
-
-  function stopBanner() {
-    setTimeout(() => {
-
-      var verifica = checkLast();
-
-      if (verifica) {
-        return;
       }
+    },
+    error: function (xhr, status, error) {
+      console.error("Error:", error);
+    },
+  });
+}
 
-      var num;
-      var item;
-      var trash_row;
+function stopBanner() {}
+/*  setTimeout(() => {
+    var verifica = checkLast();
 
-      var select0 = document.getElementById('tabella');
-      var select1 = select0.getElementsByClassName('rigaTab');
+    if (verifica) {
+      return;
+    }
 
-      num = select1.length - 1;
-      item = select1[num];
-      trash_row = item;
+    var num;
+    var item;
+    var trash_row;
 
-      var select2= item.getElementsByClassName('col');
+    var select0 = document.getElementById("tabella");
+    var select1 = select0.getElementsByClassName("rigaTab");
 
-      item = select2[0];
+    num = select1.length - 1;
+    item = select1[num];
+    trash_row = item;
 
-      var select3= item.getElementsByTagName('a');
+    var select2 = item.getElementsByClassName("col");
 
-      item = select3[0];
+    item = select2[0];
 
-      if (item != null) {
-        var data = item.title;
+    var select3 = item.getElementsByTagName("a");
 
-        if (data == 'Free Web Hosting with PHP5 or PHP7') {
-          $(trash_row).html("");
-        }      
-      }      
+    item = select3[0];
 
-     }, 500);      
+    if (item != null) {
+      var data = item.title;
 
-  }
-
-  function checkLast() {
-      var num;
-      var item;
-      var trash_row;
-
-      var select0 = document.getElementById('tabella');
-      var select1 = select0.getElementsByClassName('rigaTab');
-
-      num = select1.length - 1;
-      item = select1[num];
-      trash_row = item;
-
-      var select2= item.getElementsByClassName('col');
-      
-      num = select2.length - 1;
-      item = select2[num];
-
-      //console.log(item.outerText);
-
-      var data = item.outerText.split(",");
-      
-      if (data[0] == 'Giorno: undefined' && data[1] == ' undefined;') {
+      if (data == "Free Web Hosting with PHP5 or PHP7") {
         $(trash_row).html("");
-        return true;
       }
-      else{
-        return false;
-      }
+    }
+  }, 500);
+}
 
+function checkLast() {
+  var num;
+  var item;
+  var trash_row;
+
+  var select0 = document.getElementById("tabella");
+  var select1 = select0.getElementsByClassName("rigaTab");
+
+  num = select1.length - 1;
+  item = select1[num];
+  trash_row = item;
+
+  var select2 = item.getElementsByClassName("col");
+
+  num = select2.length - 1;
+  item = select2[num];
+
+  //console.log(item.outerText);
+
+  var data = item.outerText.split(",");
+
+  if (data[5] == "Giorno: undefined" && data[2] == " undefined;") {
+    $(trash_row).html("");
+    return true;
+  } else {
+    return false;
   }
+}
+*/

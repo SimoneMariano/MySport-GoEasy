@@ -57,70 +57,22 @@
       >
     </div>
 
+    <br />
+
     <section class="tabellone" id="tabellone"></section>
 
-    <style>
-      div.rigaTab {
-        font-size: small;
-        border-top-style: solid;
-        border-top-width: 1px;
-        border-top-color: black;
-      }
-      div.rigaTab:hover {
-        background: lightgrey;
-      }
-    </style>
+    <br />
 
-    <div
-      class="tabella container-fluid text-center hoverable"
-      id="tabella"
-      style="padding-bottom: 50px"
-    ></div>
+    <p class="text" align=center style="color: gray;">Premere su uno dei riquadri per ulteriori informazioni</p>
 
-    <!-- ScrollUp Button -->
-    <script>
-      $(document).ready(function () {
-        $(window).scroll(function () {
-          if ($(this).scrollTop() > 50) {
-            $("#back-to-top").fadeIn();
-          } else {
-            $("#back-to-top").fadeOut();
-          }
-        });
-        // scroll body to 0px on click
-        $("#back-to-top").click(function () {
-          $("body,html").animate(
-            {
-              scrollTop: 0,
-            },
-            400
-          );
-          return false;
-        });
-      });
-    </script>
+    <br />
 
-    <a
-      id="back-to-top"
-      href="#"
-      class="btn btn-primary btn-lg back-to-top"
-      role="button"
-      style="
-        position: fixed;
-        bottom: 60px;
-        right: 5px;
-        display: none;
-        font-size: small;
-      "
-    >
-      Up
-    </a>
+    <div class="container-fluid">
+      <div class="row" style="width: 100%; padding-bottom: 50px" id="content"></div>
+    </div>
 
     <!-- FootBar -->
-    <div
-      include-html="/MySport-GoEasy/html/partials/bottombar.html"
-      style="padding-bottom: 50px"
-    ></div>
+    <div include-html="/MySport-GoEasy/html/partials/bottombar.html"></div>
 
     <!-- Bootstrap JS -->
     <script
