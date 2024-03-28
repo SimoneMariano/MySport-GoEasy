@@ -43,13 +43,9 @@
 
     <!-- Body -->
 
-    <div class="container-fluid" style="width: 100%;">
-      <div class="row" style="width: 100%;">
+    <div class="container-fluid" style="width: 100%; margin: 0 auto">
+      <div class="row" style="width: 100%">
         <div class="col" align="left">
-          <i
-            class="fa-solid fa-chevron-right fa-flip-horizontal"
-            style="color: #42dbf0"
-          ></i>
           <a
             href="/MySport-GoEasy/html/tornei/Squadre.html"
             role="button"
@@ -60,12 +56,55 @@
               border-color: #42dbf0;
               color: black;
             "
-            >Squadre</a
+            ><i
+              class="fa-solid fa-chevron-right fa-flip-horizontal"
+              style="color: black"
+            ></i>
+            Squadre</a
           >
         </div>
 
         <div class="col" align="center">
-          <section class="tabellone" id="tabellone"></section>
+          <div class="row">
+            <section class="tabellone" id="tabellone"></section>
+          </div>
+          <div class="row">
+            <div class="col-sm-6" align="center">
+              <a
+                class="btn"
+                data-bs-toggle="collapse"
+                href="#collapse"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+                style="
+                  border-radius: 3em;
+                  background: #42dbf0;
+                  border-color: #42dbf0;
+                  color: black;
+                  padding: 3px;
+                "
+              >
+                Seleziona i filtri
+              </a>
+            </div>
+            <div class="col-sm-6" align="center">
+              <a
+                class="btn"
+                role="button"
+                style="
+                  border-radius: 3em;
+                  background: #42dbf0;
+                  border-color: #42dbf0;
+                  color: black;
+                  padding: 3px;
+                "
+                href="javascript:history.go(0)"
+              >
+                Ricarica la pagina
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="col" align="right">
@@ -79,50 +118,37 @@
               border-color: #42dbf0;
               color: black;
             "
-            >Classifica</a
-          >
-          <i class="fa-solid fa-chevron-right" style="color: #42dbf0"></i>
+            >Classifica
+            <i class="fa-solid fa-chevron-right" style="color: black"></i>
+          </a>
         </div>
       </div>
     </div>
-
     <br />
-
-    <div class="text-center" style="padding: 2px">
-      <a
-        class="btn btn-primary"
-        data-bs-toggle="collapse"
-        href="#collapse"
-        role="button"
-        aria-expanded="false"
-        aria-controls="collapseExample"
-        style="font-size: small; padding: 2px"
-      >
-        Applica filtri ai risultati
-      </a>
-      <a
-        class="btn btn-primary"
-        role="button"
-        style="font-size: small; padding: 2px"
-        href="javascript:history.go(0)"
-      >
-        Ricarica la pagina
-      </a>
-    </div>
-
-    <div class="collapse" id="collapse" style="font-size: small">
-      <div class="row text-center">
+    <div
+      class="collapse card shadow p-3 mb-5 bg-body rounded"
+      id="collapse"
+      style="font-size: small; width: 80%; text-align: center; margin: 0 auto"
+    >
+      <div class="card-body text-center">
         <label class="active"
-          >Filtra risultati per data e/o squadra e/o giornata</label
-        >
-        <div class="col">
-          <section class="squadre" id="squadre"></section>
-        </div>
-        <div class="col">
-          <input type="date" id="dateStandard" name="dateStandard" />
-        </div>
-        <div class="col">
-          <section class="giornate" id="giornate"></section>
+          >Filtra risultati per data e/o squadra e/o giornata
+        </label>
+        <div class="row">
+          <div class="col">
+            <section class="squadre" id="squadre"></section>
+          </div>
+          <div class="col">
+            <input
+              class="form-control"
+              type="date"
+              id="dateStandard"
+              name="dateStandard"
+            />
+          </div>
+          <div class="col">
+            <section class="giornate" id="giornate"></section>
+          </div>
         </div>
       </div>
 

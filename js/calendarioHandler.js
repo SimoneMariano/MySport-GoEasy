@@ -4,9 +4,9 @@
     DI QUESTO JS ALL'INTERNO DELL'HTML.
 */
 function resetCalendar() {
-  resettaSquad();
+  $("#form1").val('Selez. il team');
   $("#dateStandard").val('');
-  resettaGiornate();
+  $("#form2").val('Selez. la giornata');
   completeCalendar();
 }
 
