@@ -40,7 +40,6 @@
     ></div>
 
     <br />
-
     <!-- Body -->
 
     <div class="container-fluid" style="width: 100%; margin: 0 auto">
@@ -85,7 +84,7 @@
                   padding: 3px;
                 "
               >
-                Seleziona i filtri<br />
+                Seleziona filtri<br />
               </a>
             </div>
             <div class="col-sm-4" align="center"><br /></div>
@@ -102,7 +101,7 @@
                 "
                 href="javascript:history.go(0)"
               >
-                Ricarica la pagina
+                Ricarica pagina
               </a>
             </div>
           </div>
@@ -179,19 +178,23 @@
       </div>
     </div>
 
+    <br />
+    <p class="text" align="center" style="color: gray">
+      Premere su una partita per ulteriori informazioni
+    </p>
+    <br />
+
     <style>
-      div.rigaTab {
-        font-size: small;
-        border-top-style: solid;
-        border-top-width: 1px;
-        border-top-color: black;
-      }
-      div.rigaTab:hover {
-        background: lightgrey;
+      @media (max-width: 600px) {
+        /* Nasconde i parziali al restringimento della finestra */
+        .hide-sm {
+          display: none;
+        }
+        .center-horizontal {
+          display: none;
+        }
       }
     </style>
-
-    <br />
 
     <div
       class="tabella container-fluid text-center hoverable"
@@ -225,14 +228,18 @@
     <a
       id="back-to-top"
       href="#"
-      class="btn btn-primary btn-lg back-to-top"
+      class="btn btn-lg back-to-top"
       role="button"
       style="
         position: fixed;
-        bottom: 60px;
-        right: 5px;
+        bottom: 30px;
+        right: 50%;
         display: none;
         font-size: small;
+        border-radius: 3em;
+        background: #42dbf0;
+        border-color: #42dbf0;
+        color: black;
       "
     >
       Up

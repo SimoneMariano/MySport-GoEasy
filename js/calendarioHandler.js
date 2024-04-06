@@ -4,9 +4,9 @@
     DI QUESTO JS ALL'INTERNO DELL'HTML.
 */
 function resetCalendar() {
-  $("#form1").val('Selez. il team');
-  $("#dateStandard").val('');
-  $("#form2").val('Selez. la giornata');
+  $("#form1").val("Selez. il team");
+  $("#dateStandard").val("");
+  $("#form2").val("Selez. la giornata");
   completeCalendar();
 }
 
@@ -15,23 +15,30 @@ function completeCalendar() {
   var cookie = getCookie("cartella");
   var squadraFilter = $("#form1").val();
   var giornoFilter = $("#dateStandard").val();
-  var giornataFilter = $("#form2").val()
+  var giornataFilter = $("#form2").val();
 
-  if (!squadraFilter || squadraFilter === 'Selez. il team') {squadraFilter = '';}
-  if (!giornoFilter) {giornoFilter = '';}
-  if (!giornataFilter || giornataFilter === 'Selez. la giornata') {giornataFilter = '';}
-
-
-  console.log(giornoFilter);
+  if (!squadraFilter || squadraFilter === "Selez. il team") {
+    squadraFilter = "";
+  }
+  if (!giornoFilter) {
+    giornoFilter = "";
+  }
+  if (!giornataFilter || giornataFilter === "Selez. la giornata") {
+    giornataFilter = "";
+  }
 
   $(".tabella").html("");
   $(document).ready(function () {
     $.ajax({
       url: "/MySport-GoEasy/php/calendarioHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
       method: "POST",
-      data: { cookie: cookie, squadraFilter: squadraFilter, giornoFilter: giornoFilter, giornataFilter: giornataFilter},
+      data: {
+        cookie: cookie,
+        squadraFilter: squadraFilter,
+        giornoFilter: giornoFilter,
+        giornataFilter: giornataFilter,
+      },
       success: function (response) {
-        console.log(response);
         var data = JSON.parse(response);
         var dataList = $("#tabella");
         // Loop attraverso i dati e aggiungi elementi alla lista
@@ -49,6 +56,11 @@ function completeCalendar() {
             risultato[5] = "0-0";
           }
 
+          var parziale = [];
+          for (var o = 0; o < risultato.length; o++) {
+            parziale.push(risultato[o].split("-"));
+          }
+
           if (data[i].arFlag == "A") {
             data[i].arFlag = "Andata";
           }
@@ -59,7 +71,144 @@ function completeCalendar() {
             data[i].noteArbitro = "";
           }
 
+          var orarioGara = data[i].orarioGara.split(" ");
+          var orario = orarioGara[1].split(":");
+          var ore = orario[0];
+          var minuti = orario[1];
+          var giorno = orarioGara[0].split("-");
+          var anno = giorno[0];
+          var mese = giorno[1];
+          var giorni = giorno[2];
+
           dataList.append(
+            '<div class="container-fluid border-bottom" data-bs-toggle="modal" data-bs-target="#modal' +
+              data[i].numeroPartita +
+              '" onMouseOver="this.style.backgroundColor=\'lightgray\'" onMouseOut="this.style.backgroundColor=\'\'">' +
+              '<div class="row">' +
+              '<div class="col">' +
+              '<p class="mb-0 center-horizontal" style="text-align: center; margin: 0 auto">' +
+              "Data: <b>" +
+              giorni +
+              "/" +
+              mese +
+              "/" +
+              anno +
+              "</b> | Ora: <b>" +
+              ore +
+              "." +
+              minuti +
+              "</b></p></div></div>" +
+              '<div class="row">' +
+              '<div class="col">' +
+              '<div class="row align-items-center">' +
+              '<div class="col-auto">' +
+              '<img style="max-width: 75%; padding: 8px;" src="/MySport-GoEasy/data/' +
+              data[i].codiceTorneo + '/icon/' +
+              img1 +
+              '" class="img-fluid" /></div>' +
+              '<div class="col"><p class="mb-0"><b>' +
+              data[i].squadraCasa +
+              "</b></p></div>" +
+              '<div class="col text-end">' +
+              '<p class="mb-0">Set: <b>' +
+              parziale[0][0] +
+              '</b></p><div class="hide-sm"><p class="mb-0">Parziali: ' +
+              parziale[1][0] +
+              " - " +
+              parziale[2][0] +
+              " - " +
+              parziale[3][0] +
+              " - " +
+              parziale[4][0] +
+              " - " +
+              parziale[5][0] +
+              "</p></div></div></div></div></div>" +
+              '<div class="row"><div class="col"><div class="row align-items-center"><div class="col-auto">' +
+              '<img style="max-width: 75%; padding: 8px;" src="/MySport-GoEasy/data/' +
+              data[i].codiceTorneo + '/icon/' +
+              img2 +
+              '" class="img-fluid" /></div>' +
+              '<div class="col"><p class="mb-0"><b>' +
+              data[i].squadraTrasferta +
+              "</b></p></div>" +
+              '<div class="col text-end">' +
+              '<p class="mb-0">Set: <b>' +
+              parziale[0][1] +
+              "</b></p>" +
+              '<div class="hide-sm"><p class="mb-0">Parziali: ' +
+              parziale[1][1] +
+              " - " +
+              parziale[2][1] +
+              " - " +
+              parziale[3][1] +
+              " - " +
+              parziale[4][1] +
+              " - " +
+              parziale[5][1] +
+              "</p></div></div></div></div></div></div>" +
+              '<div class="modal fade" id="modal' +
+              data[i].numeroPartita +
+              '" aria-labelledby="ModalLabel' +
+              data[i].numeroPartita +
+              '" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h1 class="modal-title fs-4 fw-bolder" id="ModalLabel' +
+              data[i].numeroPartita +
+              '" style="margin: auto;">Giornata: ' +
+              data[i].numeroGiornata +
+              " Part.N. :" +
+              data[i].numeroPartita +
+              " Girone: " +
+              data[i].arFlag +
+              '</h1></div><div class="modal-body" style="padding-bottom: 5px; font-size: small;"><div class="row"><div class="row"><div class="col py-0"><div class="text-center">' +
+              ore +
+              "." +
+              minuti +
+              ' - ' +
+              giorni +
+              "/" +
+              mese +
+              "/" +
+              anno +
+              " - Arb.: " +
+              data[i].nomeArbitro +
+              '<br /></div></div></div><div class="row"><div class="col-6"><div class="row"><img class="rounded" src="/MySport-GoEasy/data/' +
+              data[i].codiceTorneo +
+              "/icon/" +
+              img1 +
+              '" style="padding: 5px; max-width: 50px; max-height: 50px; margin:auto"/></div><div class="row"><div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
+              data[i].squadraCasa +
+              '</div></div></div><div class="col-6"><div class="row"><img class="rounded" src="/MySport-GoEasy/data/' +
+              data[i].codiceTorneo +
+              "/icon/" +
+              img2 +
+              '"style="padding: 5px; max-width: 50px; max-height: 50px; margin:auto"/></div><div class="row"><div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
+              data[i].squadraTrasferta +
+              '</div></div></div></div></div><div class="row"><div class="col py-0"><div class="text-center text-danger fw-bolder">Ris. = ' +
+              risultato[0] +
+              " [" +
+              risultato[1] +
+              "/" +
+              risultato[2] +
+              "/" +
+              risultato[3] +
+              "/" +
+              risultato[4] +
+              "/" +
+              risultato[5] +
+              ']</div></div></div>' +
+              '<div class="row"><div class="col py-0"><div class="text-center">' +
+              '<p class="text">Indirizzo campo: ' +
+              '<a href="http://maps.google.com/?q=' +
+                data[i].indirizzoSquadra +
+                '" target="_blank">' +
+                data[i].indirizzoSquadra +
+                "</a>" +
+                ";</p>" +
+              '</div></div></div><div class="row"><div class="col py-0"><div class="text-center">' +
+              data[i].noteArbitro +
+              '</div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">' +
+              "Chiudi</button></div></div></div></div></div>"
+
+            /*
             '<div class="rigaTab" style="padding-bottom: 5px;" id="_' +
               data[i].numeroPartita +
               '">' +
@@ -129,7 +278,7 @@ function completeCalendar() {
               '<div class="text-center">' +
               data[i].noteArbitro +
               "</div></div>" +
-              "</div></div></div>"
+              "</div></div></div>"*/
           );
         }
       },

@@ -12,37 +12,45 @@ $giornataFilter = $_POST['giornataFilter'];
 
 // Esegui una query per estrarre i dati
 if ($squadraFilter == "" && $giornoFilter == "" && $giornataFilter == "") {
-    $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie');";
+    $sql = "SELECT * FROM calendario JOIN squadra On calendario.squadraCasa = squadra.nomeSquadra
+WHERE calendario.codiceTorneo = ('$cookie') AND squadra.codiceTorneo = ('$cookie');";
     $result = mysqli_query($conn, $sql);
 } elseif ($squadraFilter != "" && $giornoFilter == "" && $giornataFilter == "") {
-    $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
+    $sql = "SELECT * FROM calendario JOIN squadra On calendario.squadraCasa = squadra.nomeSquadra
+WHERE calendario.codiceTorneo = ('$cookie') AND squadra.codiceTorneo = ('$cookie')
      AND (squadraCasa = ('$squadraFilter') OR squadraTrasferta = ('$squadraFilter'));";
      $result = mysqli_query($conn, $sql);
 } elseif ($squadraFilter != "" && $giornoFilter != "" && $giornataFilter == "") {
-    $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
+    $sql = "SELECT * FROM calendario JOIN squadra On calendario.squadraCasa = squadra.nomeSquadra
+WHERE calendario.codiceTorneo = ('$cookie') AND squadra.codiceTorneo = ('$cookie')
      AND (squadraCasa = ('$squadraFilter') OR squadraTrasferta = ('$squadraFilter'))
      AND  DATE(orarioGara) >= ('$giornoFilter');";
      $result = mysqli_query($conn, $sql);
 } elseif ($squadraFilter != "" && $giornoFilter != "" && $giornataFilter != "") {
-    $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
+    $sql = "SELECT * FROM calendario JOIN squadra On calendario.squadraCasa = squadra.nomeSquadra
+WHERE calendario.codiceTorneo = ('$cookie') AND squadra.codiceTorneo = ('$cookie')
      AND (squadraCasa = ('$squadraFilter') OR squadraTrasferta = ('$squadraFilter'))
      AND  DATE(orarioGara) >= ('$giornoFilter') AND numeroGiornata = ('$giornataFilter');";
      $result = mysqli_query($conn, $sql);
 } elseif ($squadraFilter == '' && $giornoFilter == '' && $giornataFilter != "") {
-    $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
+    $sql = "SELECT * FROM calendario JOIN squadra On calendario.squadraCasa = squadra.nomeSquadra
+WHERE calendario.codiceTorneo = ('$cookie') AND squadra.codiceTorneo = ('$cookie')
      AND numeroGiornata = ('$giornataFilter');";
      $result = mysqli_query($conn, $sql);
 } elseif ($squadraFilter == '' && $giornoFilter != "" && $giornataFilter != "") {
-    $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
+    $sql = "SELECT * FROM calendario JOIN squadra On calendario.squadraCasa = squadra.nomeSquadra
+WHERE calendario.codiceTorneo = ('$cookie') AND squadra.codiceTorneo = ('$cookie')
      AND  DATE(orarioGara) >= ('$giornoFilter') AND numeroGiornata = ('$giornataFilter');";
      $result = mysqli_query($conn, $sql);
 } elseif ($squadraFilter != "" && $giornoFilter == '' && $giornataFilter != "") {
-    $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
+    $sql = "SELECT * FROM calendario JOIN squadra On calendario.squadraCasa = squadra.nomeSquadra
+WHERE calendario.codiceTorneo = ('$cookie') AND squadra.codiceTorneo = ('$cookie')
      AND (squadraCasa = ('$squadraFilter') OR squadraTrasferta = ('$squadraFilter'))
      AND numeroGiornata = ('$giornataFilter');";
      $result = mysqli_query($conn, $sql);
 } elseif ($squadraFilter == '' && $giornoFilter!= "" && $giornataFilter == '') {
-    $sql = "SELECT * FROM calendario WHERE codiceTorneo = ('$cookie')
+    $sql = "SELECT * FROM calendario JOIN squadra On calendario.squadraCasa = squadra.nomeSquadra
+WHERE calendario.codiceTorneo = ('$cookie') AND squadra.codiceTorneo = ('$cookie')
      AND  DATE(orarioGara) >= ('$giornoFilter');";
     $result = mysqli_query($conn, $sql);
 }

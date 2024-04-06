@@ -40,6 +40,12 @@
               data[i].posizioneClassifica +
               '</h5><p class="card-text">'+
               data[i].nomeSquadra +
+              '<br>Partite giocate: '+
+              data[i].partiteGiocate +
+              ', Vittorie: '+
+              data[i].partiteVinte +
+              ', Sconfitte: '+
+              data[i].partitePerse +
               '</p> </div></div><i class="fa-solid fa-caret-down fa-2xs" style="color: #c0c0c0;"></i></div></div></div>'+
               '<div class="modal fade" id="modal' +
               data[i].posizioneClassifica +
