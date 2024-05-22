@@ -17,6 +17,31 @@ function completeSquad() {
       var dataList = $("#content");
       // Loop attraverso i dati e aggiungi elementi alla lista
       for (var i = 0; i < data.length; i++) {
+
+        if (data[i].giornoGaraPreferito==1){
+          data[i].giornoGaraPreferito = "Lunedì";
+        }
+        else if (data[i].giornoGaraPreferito==2) {
+          data[i].giornoGaraPreferito = "Martedì";
+        }
+        else if (data[i].giornoGaraPreferito==3) {
+          data[i].giornoGaraPreferito = "Mercoledì";
+        }
+        else if (data[i].giornoGaraPreferito==4) {
+          data[i].giornoGaraPreferito = "Giovedì";
+        }
+        else if (data[i].giornoGaraPreferito==5) {
+          data[i].giornoGaraPreferito = "Venerdì";
+        }
+        else if (data[i].giornoGaraPreferito==6) {
+          data[i].giornoGaraPreferito = "Sabato";
+        }
+        else if (data[i].giornoGaraPreferito==7) {
+          data[i].giornoGaraPreferito = "Domenica";
+        } else {
+          data[i].giornoGaraPreferito = "Non specificata";
+        }
+
         dataList.append(
 
           '<div class="col-sm-4"><div class="card shadow p-3 mb-5 bg-body rounded" style="text-align: center; margin: 5px; this.hover: gray;" data-bs-toggle="modal" data-bs-target="#modal'+ 
@@ -25,9 +50,9 @@ function completeSquad() {
           data[i].codiceTorneo +
           '/icon/'+
           data[i].nomeSquadra +
-          '.jpg" class="img-fluid rounded-start" /></div><div class="col-lg-8"><div class="card-body"><h5 class="card-title">'+
+          '.jpg" class="img-fluid rounded-start" /></div><div class="col-lg-8"><div class="card-body"><h6 class="card-title">'+
           data[i].nomeSquadra +
-          '</h5> </div></div><i class="fa-solid fa-caret-down fa-2xs" style="color: #c0c0c0;"></i></div></div></div>'+
+          '</h6> </div></div><i class="fa-solid fa-caret-down fa-2xs" style="color: #c0c0c0;"></i></div></div></div>'+
           '<div class="modal fade" id="modal' +
           i +
           '" style="text-align: center; aria-labelledby="ModalLabel' +
@@ -38,12 +63,12 @@ function completeSquad() {
           '">Informazioni utili</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">' +
           '<p class="text">Referente: '+
           data[i].referenteSquadra +
-          ' ( Tel.: '+
-          data[i].telefono +
-          ' - Email: '+
-          data[i].email +
-          ' )</br>Giorno preferito: '+
-          data[i].giornoGaraPreferito+
+          '<br>Tel.: '+
+          data[i].telefonoSquadra +
+          '<br>Email: '+
+          data[i].emailSquadra +
+          '</br>Giorno preferito: '+
+          data[i].giornoGaraPreferito +
           ' - ' +
           data[i].oraGaraPreferito +
           ' </br>Indirizzo campo: ' +
@@ -52,7 +77,6 @@ function completeSquad() {
             '" target="_blank">' +
             data[i].indirizzoSquadra +
             "</a>" +
-            ";" +
           '</p></div></div></div></div>'
 
           /*'<div class="rigaTab row" style="padding: 3px">' +

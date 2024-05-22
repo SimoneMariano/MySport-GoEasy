@@ -8,7 +8,7 @@ if ($conn->connect_error) {
 $cookie = $_POST['cookie'];
 
 // Esegui una query per estrarre i dati
-$sql = "SELECT * FROM squadra INNER JOIN referente ON squadra.referenteSquadra=referente.nome WHERE codiceTorneo = ('$cookie');";
+$sql = "SELECT * FROM squadre WHERE codiceTorneo = ('$cookie');";
 $result = mysqli_query($conn, $sql);
 
 

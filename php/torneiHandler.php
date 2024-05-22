@@ -3,7 +3,7 @@
 require ('./dbConnection.php');
 
 // Esegui una query per estrarre i dati
-$sql = "SELECT * FROM torneo";
+$sql = "SELECT * FROM tornei";
 $result = mysqli_query($conn, $sql);
 
 $data = array();

@@ -8,7 +8,7 @@ if ($conn->connect_error) {
 $cookie = $_POST['cookie'];
 
 // Esegui una query per estrarre i dati
-$sql = "SELECT nomeTorneo FROM torneo WHERE codiceTorneo = ('$cookie');";
+$sql = "SELECT nomeTorneo FROM tornei WHERE codiceTorneo = ('$cookie');";
 $result = mysqli_query($conn, $sql);
 
 $data = array();

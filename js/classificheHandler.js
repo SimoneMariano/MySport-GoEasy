@@ -28,6 +28,21 @@
           var dataList = $("#content");
           // Loop attraverso i dati e aggiungi elementi alla lista
           for (var i = 0; i < data.length; i++) {
+
+            var rateoSet = data[i].setVinti / data[i].setPersi;
+
+            var rateoPunti = data[i].puntiFatti / data[i].puntiSubiti;
+
+            var temp = Number((Math.abs(rateoSet) * 100).toPrecision(15));
+            rateoSet = Math.round(temp) / 100 * Math.sign(rateoSet);
+
+            temp = Number((Math.abs(rateoPunti) * 100).toPrecision(15));
+            rateoPunti = Math.round(temp) / 100 * Math.sign(rateoPunti);
+
+            if (data[i].penalità == null) {
+              data[i].penalità = 0;
+            }
+
             dataList.append(
 
               '<div class="col-sm-4"><div class="card shadow p-3 mb-5 bg-body rounded" style="text-align: center; margin: 5px; this.hover: gray;" data-bs-toggle="modal" data-bs-target="#modal'+ 
@@ -42,7 +57,7 @@
               data[i].nomeSquadra +
               '<br>Partite giocate: '+
               data[i].partiteGiocate +
-              ', Vittorie: '+
+              '<br>Vittorie: '+
               data[i].partiteVinte +
               ', Sconfitte: '+
               data[i].partitePerse +
@@ -74,9 +89,9 @@
               ' - Punti subiti: ' +
               data[i].puntiSubiti +
               ' </br>Rateo set: ' +
-              data[i].rateoSet +
+              rateoSet +
               ' - Rateo punti: ' +
-              data[i].rateoPunti +
+              rateoPunti +
               '</p></div></div></div></div>'
 
               /*"<tr style='border-spacing=0px;'><td>" +

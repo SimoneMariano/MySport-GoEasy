@@ -61,15 +61,30 @@ function completeCalendar() {
             parziale.push(risultato[o].split("-"));
           }
 
+          for (var x = 1; x<=5; x++){
+            if (parziale[x][0].length == 1){
+              parziale[x][0] = "0" + parziale[x][0];
+            }
+          }
+
+          for (var y = 1; y<=5; y++){
+            if (parziale[y][1].length == 1){
+              parziale[y][1] = "0" + parziale[y][1];
+            }
+          }
+
           if (data[i].arFlag == "A") {
             data[i].arFlag = "Andata";
           }
           if (data[i].arFlag == "R") {
             data[i].arFlag = "Ritorno";
           }
-          if (data[i].noteArbitro == "-") {
-            data[i].noteArbitro = "";
-          }
+
+          var noteArbitro = data[i].noteArbitro.split("|");
+
+          codice = noteArbitro[0];
+          note = noteArbitro[1];
+        
 
           var orarioGara = data[i].orarioGara.split(" ");
           var orario = orarioGara[1].split(":");
@@ -96,7 +111,7 @@ function completeCalendar() {
               "</b> | Ora: <b>" +
               ore +
               "." +
-              minuti +
+              minuti + ' ' + note +
               "</b></p></div></div>" +
               '<div class="row">' +
               '<div class="col">' +
@@ -202,9 +217,9 @@ function completeCalendar() {
                 '" target="_blank">' +
                 data[i].indirizzoSquadra +
                 "</a>" +
-                ";</p>" +
+                "</p>" +
               '</div></div></div><div class="row"><div class="col py-0"><div class="text-center">' +
-              data[i].noteArbitro +
+              note +
               '</div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">' +
               "Chiudi</button></div></div></div></div></div>"
 
