@@ -36,6 +36,24 @@
       crossorigin="anonymous"
     ></script>
     <script src="/MySport-GoEasy/js/scroll.js"></script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        flex: 1;
+      }
+      footer {
+        text-align: center;
+      }
+    </style>
   </head>
 
   <body
@@ -44,6 +62,10 @@
   >
     <!-- Navbar -->
     <div include-html="/MySport-GoEasy/html/partials/navbar.html" class="sticky-top"></div>
+
+    <div class="content">
+
+    <br />
 
     <header class="jumbotron">
       <div class="container">
@@ -140,6 +162,7 @@
     </div>
 
     <br />
+    </div>
 
     <!-- FootBar -->
     <div include-html="/MySport-GoEasy/html/partials/bottombar.html"></div>

@@ -30,6 +30,25 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"
     ></script>
     <script src="/MySport-GoEasy/js/bannerHandler.js"></script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        flex: 1;
+      }
+      footer {
+        text-align: center;
+      }
+    </style>
+    
   </head>
 
   <body onload="completeClass(); titleAppend(); stopBannerGeneral();">
@@ -40,6 +59,8 @@
       include-html="/MySport-GoEasy/html/partials/navbar.html"
       class="sticky-top"
     ></div>
+
+    <div class="content">
 
     <br />
 
@@ -100,6 +121,8 @@
         id="content"
       ></div>
     </div>
+
+  </div>
 
     <!-- FootBar -->
     <div include-html="/MySport-GoEasy/html/partials/bottombar.html"></div>

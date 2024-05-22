@@ -33,12 +33,32 @@
       src="https://kit.fontawesome.com/1d057fd301.js"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        flex: 1;
+      }
+      footer {
+        text-align: center;
+      }
+    </style>
+    
   </head>
 
   <body onload="stopBannerGeneral();">
     <!-- Navbar -->
     <div include-html="/MySport-GoEasy/html/partials/navbar.html" class="sticky-top"></div>
 
+    <div class="content">
     <br>
 
     <!-- Intro -->
@@ -260,6 +280,8 @@
     </div>
 
     <br />
+
+  </div>
 
     <!-- FootBar -->
     <div include-html="/MySport-GoEasy/html/partials/bottombar.html"></div>

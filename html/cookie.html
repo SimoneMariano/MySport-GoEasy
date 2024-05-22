@@ -33,97 +33,193 @@
       src="https://kit.fontawesome.com/1d057fd301.js"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        flex: 1;
+      }
+      footer {
+        text-align: center;
+      }
+    </style>
+    
   </head>
 
   <body onload="stopBannerGeneral();">
     <!-- Navbar -->
-    <div include-html="/MySport-GoEasy/html/partials/navbar.html" class="sticky-top"></div>
+    <div
+      include-html="/MySport-GoEasy/html/partials/navbar.html"
+      class="sticky-top"
+    ></div>
 
-    <header class="jumbotron">
-      <div class="container">
-        <h1 class="display-4" style="text-align: center;">Informativa sull’uso dei cookies</h1>
-        <h5 style="text-align: center;">
-          Ai sensi degli artt. 13 e 122 del D.Lgs. n. 196/2003 e del
-          Provvedimento del Garante della protezione dei dati personali n. 229
-          del 8/5/2014,<br/>si forniscono informazioni dettagliate sui cookie
-          utilizzati e sulle modalità di tutela della Privacy dei visitatori<br/>
-          durante l’utilizzo del sito MySport GoEasy (cosiddetta “informativa
-          estesa”).
-        </h5>
-      </div>
-    </header>
+    <div class="content">
+      <header class="jumbotron">
+        <div class="container">
+          <h1 class="display-4" style="text-align: center">
+            Informativa sull’uso dei cookies
+          </h1>
+          <h5 style="text-align: center">
+            Ai sensi degli artt. 13 e 122 del D.Lgs. n. 196/2003 e del
+            Provvedimento del Garante della protezione dei dati personali n. 229
+            del 8/5/2014,<br />si forniscono informazioni dettagliate sui cookie
+            utilizzati e sulle modalità di tutela della Privacy dei
+            visitatori<br />
+            durante l’utilizzo del sito MySport GoEasy (cosiddetta “informativa
+            estesa”).
+          </h5>
+        </div>
+      </header>
 
-    <div class="padding">
-      <div class="col-md-12">
-        <div
-          class="wow fadeInUp animated"
-          data-wow-duration="2s"
-          data-wow-delay="0.2s"
-          style="
-            visibility: visible;
-            animation-duration: 2s;
-            animation-delay: 0.2s;
-            animation-name: fadeInUp;
-            margin-left: 10px;
-          "
-        >
-          <p>
-            1. TIPOLOGIA DEI DATI ELABORATI/LINK AD ALTRI SITI WEB<br/>
-Il sito MySport GoEasy raccoglie le informazioni ottenute tramite i cookie, come meglio dettagliato nel prosieguo.<br/>
-Questo sito può altresì contenere link ad altri siti web collegati a MySport GoEasy, o a siti web di terzi, o a siti web di social media.<br/>
-Cliccando sui link che rimandano a questi altri siti web, va tenuto presente che tali siti hanno proprie politiche in materia di privacy sui dati e sui cookie, alle quali si rimanda.<br/>
-Lo staff di MySport GoEasy non assume alcuna responsabilità in materia per i siti web di terzi.
-          </p>
-          <p>
-2. UTILIZZO DEI COOKIE<br/>
-Questo sito, i messaggi via mail ed i servizi online possono utilizzare dei “cookie” per l’ottimizzazione dei servizi offerti.<br/>
-MSGE rispetta il disposto del citato Provvedimento del Garante per la protezione dei dati personali n. 229 del 8/5/2013 “Individuazione delle modalità semplificative per l’informativa e l’acquisizione del consenso per l’uso dei cookie”.<br/>
-        </p>
-        <p>
-3. DEFINIZIONE DI “COOKIE”<br/>
-Un “cookie” è un file di piccole dimensioni, di norma costituito da lettere e numeri, che inviamo al file del browser contenente i cookie sull’hard disk del vostro computer tramite il nostro sito web.<br/>
-La principale finalità di un cookie è di consentire al nostro sito web di presentare all’utente delle pagine web su misura, che rendano l’esperienza di visita al sito più personale e corrispondente alle necessità individuali dell’utente.<br/>
-Per maggiori informazioni sui cookie, sono presenti numerose pubblicazioni online:<br/>
-<li><ul>• www.garanteprivacy.it<br/></ul><ul>• www.allaboutcookies.org<br/></ul></li>
-</p>
-<p>
-4. QUALI SONO I COOKIE IMPIEGATI DA QUESTO SITO?<br/>
-MySport GoEasy utilizza:<br/>
-<li><ul>• Cookie di sessione (tecnici): cookie temporanei memorizzati per la sessione di scelta campionato nel file del vostro browser contenente i cookie. Questi cookie sono necessari per determinate applicazioni o funzionalità ai fini di un corretto funzionamento del sito.<br/></ul>
-<ul>• Cookie analytics, utilizzati ai soli fini di ottimizzazione del sito direttamente dal titolare del sito stesso, che potrà raccogliere informazioni in forma aggregata sul numero degli utenti e su come questi visitano il sito.<br/></ul></li>
-</p>
-<p>
-5. COOKIE DI TERZI<br/>
-MySport GoEasy non utilizza cookie di terzi.<br/>
-</p>
-<p>
-6. ABILITAZIONE E DISABILITAZIONE DI COOKIE E TECNOLOGIE ANALOGHE<br/>
-In qualsiasi momento avete la possibilità di rifiutare i cookie, modificando le impostazioni del vostro browser per Internet.<br/>
-Se utilizzate Mozilla Firefox, dovete fare come segue:<br/>
-<li>
-<ul>• selezionare la voce “Strumenti” e andare in “Opzioni”;<br/></ul>
-<ul>• cliccare sulla scheda “Privacy”;<br/></ul>
-<ul>• scegliere le impostazioni desiderate.<br/></ul>
-</li>
-Se utilizzate Google Chrome, dovete fare come segue:<br/>
-<li>
-<ul>• selezionare la voce “Impostazioni” e andare su “Mostra impostazioni avanzate”;<br/></ul>
-<ul>• cliccare sulla scheda “Impostazione contenuti”;<br/></ul>
-<ul>• scegliere le impostazioni desiderate.<br/></ul>
-</li>
-Se utilizzate Safari su OSX, dovete fare come segue:<br/>
-<li>
-<ul>• cliccare su “Safari” nella parte superiore della finestra del browser e seleziona l’opzione “Preferenze”;<br/></ul>
-<ul>• cliccare su “Sicurezza” e poi “Accetta i cookie”;<br/></ul>
-<ul>• scegliere le impostazioni desiderate.<br/></ul>
-</li>
-Per altri browser per internet, fate riferimento alle istruzioni del vostro browser per ottenere maggiori informazioni su come modificare le impostazioni del vostro browser o cancellare i cookie.<br/>
-Alcune caratteristiche e la funzionalità completa del presente sito non saranno disponibili una volta disabilitatati i cookie.<br/>
-</p>
-<p>
-7. VARIAZIONI<br/>
-Qualsivoglia modifica futura alla presente informativa sarà riportata su questa pagina, che si consiglia di consultare regolarmente per verificare eventuali modifiche e/o aggiornamenti.<br/>
-<p>
+      <div class="padding">
+        <div class="col-md-12">
+          <div
+            class="wow fadeInUp animated"
+            data-wow-duration="2s"
+            data-wow-delay="0.2s"
+            style="
+              visibility: visible;
+              animation-duration: 2s;
+              animation-delay: 0.2s;
+              animation-name: fadeInUp;
+              margin-left: 10px;
+            "
+          >
+            <p>
+              1. TIPOLOGIA DEI DATI ELABORATI/LINK AD ALTRI SITI WEB<br />
+              Il sito MySport GoEasy raccoglie le informazioni ottenute tramite
+              i cookie, come meglio dettagliato nel prosieguo.<br />
+              Questo sito può altresì contenere link ad altri siti web collegati
+              a MySport GoEasy, o a siti web di terzi, o a siti web di social
+              media.<br />
+              Cliccando sui link che rimandano a questi altri siti web, va
+              tenuto presente che tali siti hanno proprie politiche in materia
+              di privacy sui dati e sui cookie, alle quali si rimanda.<br />
+              Lo staff di MySport GoEasy non assume alcuna responsabilità in
+              materia per i siti web di terzi.
+            </p>
+            <p>
+              2. UTILIZZO DEI COOKIE<br />
+              Questo sito, i messaggi via mail ed i servizi online possono
+              utilizzare dei “cookie” per l’ottimizzazione dei servizi
+              offerti.<br />
+              MSGE rispetta il disposto del citato Provvedimento del Garante per
+              la protezione dei dati personali n. 229 del 8/5/2013
+              “Individuazione delle modalità semplificative per l’informativa e
+              l’acquisizione del consenso per l’uso dei cookie”.<br />
+            </p>
+            <p>
+              3. DEFINIZIONE DI “COOKIE”<br />
+              Un “cookie” è un file di piccole dimensioni, di norma costituito
+              da lettere e numeri, che inviamo al file del browser contenente i
+              cookie sull’hard disk del vostro computer tramite il nostro sito
+              web.<br />
+              La principale finalità di un cookie è di consentire al nostro sito
+              web di presentare all’utente delle pagine web su misura, che
+              rendano l’esperienza di visita al sito più personale e
+              corrispondente alle necessità individuali dell’utente.<br />
+              Per maggiori informazioni sui cookie, sono presenti numerose
+              pubblicazioni online:<br />
+              <li>
+                <ul>
+                  • www.garanteprivacy.it<br />
+                </ul>
+                <ul>
+                  • www.allaboutcookies.org<br />
+                </ul>
+              </li>
+            </p>
+            <p>
+              4. QUALI SONO I COOKIE IMPIEGATI DA QUESTO SITO?<br />
+              MySport GoEasy utilizza:<br />
+              <li>
+                <ul>
+                  • Cookie di sessione (tecnici): cookie temporanei memorizzati
+                  per la sessione di scelta campionato nel file del vostro
+                  browser contenente i cookie. Questi cookie sono necessari per
+                  determinate applicazioni o funzionalità ai fini di un corretto
+                  funzionamento del sito.<br />
+                </ul>
+                <ul>
+                  • Cookie analytics, utilizzati ai soli fini di ottimizzazione
+                  del sito direttamente dal titolare del sito stesso, che potrà
+                  raccogliere informazioni in forma aggregata sul numero degli
+                  utenti e su come questi visitano il sito.<br />
+                </ul>
+              </li>
+            </p>
+            <p>
+              5. COOKIE DI TERZI<br />
+              MySport GoEasy non utilizza cookie di terzi.<br />
+            </p>
+            <p>
+              6. ABILITAZIONE E DISABILITAZIONE DI COOKIE E TECNOLOGIE
+              ANALOGHE<br />
+              In qualsiasi momento avete la possibilità di rifiutare i cookie,
+              modificando le impostazioni del vostro browser per Internet.<br />
+              Se utilizzate Mozilla Firefox, dovete fare come segue:<br />
+              <li>
+                <ul>
+                  • selezionare la voce “Strumenti” e andare in “Opzioni”;<br />
+                </ul>
+                <ul>
+                  • cliccare sulla scheda “Privacy”;<br />
+                </ul>
+                <ul>
+                  • scegliere le impostazioni desiderate.<br />
+                </ul>
+              </li>
+              Se utilizzate Google Chrome, dovete fare come segue:<br />
+              <li>
+                <ul>
+                  • selezionare la voce “Impostazioni” e andare su “Mostra
+                  impostazioni avanzate”;<br />
+                </ul>
+                <ul>
+                  • cliccare sulla scheda “Impostazione contenuti”;<br />
+                </ul>
+                <ul>
+                  • scegliere le impostazioni desiderate.<br />
+                </ul>
+              </li>
+              Se utilizzate Safari su OSX, dovete fare come segue:<br />
+              <li>
+                <ul>
+                  • cliccare su “Safari” nella parte superiore della finestra
+                  del browser e seleziona l’opzione “Preferenze”;<br />
+                </ul>
+                <ul>
+                  • cliccare su “Sicurezza” e poi “Accetta i cookie”;<br />
+                </ul>
+                <ul>
+                  • scegliere le impostazioni desiderate.<br />
+                </ul>
+              </li>
+              Per altri browser per internet, fate riferimento alle istruzioni
+              del vostro browser per ottenere maggiori informazioni su come
+              modificare le impostazioni del vostro browser o cancellare i
+              cookie.<br />
+              Alcune caratteristiche e la funzionalità completa del presente
+              sito non saranno disponibili una volta disabilitatati i cookie.<br />
+            </p>
+            <p>
+              7. VARIAZIONI<br />
+              Qualsivoglia modifica futura alla presente informativa sarà
+              riportata su questa pagina, che si consiglia di consultare
+              regolarmente per verificare eventuali modifiche e/o
+              aggiornamenti.<br />
+            </p>
+
+            <p></p>
+          </div>
         </div>
       </div>
     </div>

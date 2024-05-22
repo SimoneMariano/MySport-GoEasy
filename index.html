@@ -38,78 +38,103 @@
       crossorigin="anonymous"
     ></script>
     <script src="/MySport-GoEasy/js/scroll.js"></script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        flex: 1;
+      }
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+      }
+    </style>
+
   </head>
 
   <body onload="stopBannerGeneral();">
-    <!-- Navbar -->
-    <div
-      include-html="/MySport-GoEasy/html/partials/navbar.html"
-      class="sticky-top"
-    ></div>
+    <div class="content">
+      <!-- Navbar -->
+      <div
+        include-html="/MySport-GoEasy/html/partials/navbar.html"
+        class="sticky-top"
+      ></div>
 
-    <!-- Topimage -->
-    <div include-html="/MySport-GoEasy/html/partials/topimage.html"></div>
+      <!-- Topimage -->
+      <div include-html="/MySport-GoEasy/html/partials/topimage.html"></div>
 
-    <!-- Sezione per il download -->
-    <div class="padding" style="text-align: center">
-      <div class="col-md-12">
-        <div
-          class="wow fadeInUp animated"
-          data-wow-duration="2s"
-          data-wow-delay="0.2s"
-          style="
-            visibility: visible;
-            animation-duration: 2s;
-            animation-delay: 0.2s;
-            animation-name: fadeInUp;
-          "
-        >
-          <h1>Comincia ora!</h1>
-          <p>
-            Scarica la nostra app andorid ed il nostro programma Windows per
-            iniziare la tua esperienza!
-          </p>
-        </div>
-        <div class="buttons">
-          <a
-            onclick="scrollToSection();"
-            class="btn btn-dark btn-lg"
+      <!-- Sezione per il download -->
+      <div class="padding" style="text-align: center">
+        <div class="col-md-12">
+          <div
+            class="wow fadeInUp animated"
             data-wow-duration="2s"
             data-wow-delay="0.2s"
             style="
               visibility: visible;
               animation-duration: 2s;
               animation-delay: 0.2s;
-              animation-name: fadeInLeft;
-              color: #42dbf0;
-              width: 230px;
-              margin: 3px;
+              animation-name: fadeInUp;
             "
-            ><i class="fa fa-android fa-2x"></i> Download<br />
-            <small>Android Client</small></a
           >
-          <a
-            onclick="scrollToSection();"
-            class="btn btn-info btn-lg wow fadeInRight animated"
-            data-wow-duration="3s"
-            data-wow-delay="0.3s"
-            style="
-              visibility: visible;
-              animation-duration: 3s;
-              animation-delay: 0.3s;
-              animation-name: fadeInRight;
-              width: 230px;
-              margin: 3px;
-            "
-            ><i class="fa fa-windows fa-2x"></i> Download <br />
-            <small>Windows Client & Server</small></a
-          >
+            <h1>Comincia ora!</h1>
+            <p>
+              Scarica la nostra app andorid ed il nostro programma Windows per
+              iniziare la tua esperienza!
+            </p>
+          </div>
+          <br />
+          <div class="buttons">
+            <a
+              onclick="scrollToSection();"
+              class="btn btn-dark btn-lg"
+              data-wow-duration="2s"
+              data-wow-delay="0.2s"
+              style="
+                visibility: visible;
+                animation-duration: 2s;
+                animation-delay: 0.2s;
+                animation-name: fadeInLeft;
+                color: #42dbf0;
+                width: 230px;
+                margin: 3px;
+              "
+              ><i class="fa fa-android fa-2x"></i> Download<br />
+              <small>Android Client</small></a
+            >
+            <a
+              onclick="scrollToSection();"
+              class="btn btn-info btn-lg wow fadeInRight animated"
+              data-wow-duration="3s"
+              data-wow-delay="0.3s"
+              style="
+                visibility: visible;
+                animation-duration: 3s;
+                animation-delay: 0.3s;
+                animation-name: fadeInRight;
+                width: 230px;
+                margin: 3px;
+              "
+              ><i class="fa fa-windows fa-2x"></i> Download <br />
+              <small>Windows Client & Server</small></a
+            >
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- MidbarOld -->
-    <!--
+      <br />
+
+      <!-- MidbarOld -->
+      <!--
     <div class="bg-dark text-center py-4 mt-4">
       <div class="container">
         <div class="row">
@@ -178,30 +203,10 @@
     </div>
     -->
 
-    <div class="bg-dark text-center py-4 mt-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4" style="margin-bottom: 2px;">
-            <p
-              style="
-                color: #42dbf0;
-                text-shadow: white 1px 1px 1px;
-                font-size: 30px;
-              "
-            >
-              MySport GoEasy
-            </p>
-            <p style="color: #aaa7a7; font-size: 14.1px">
-              Crea e gestisci i tuoi tornei in maniera semplice ed intuitiva!
-            </p>
-            <p style="color: white; top: 0px; font-size: 16px">
-              Il sito web, l'app Android ed il programma Windows sono sempre in
-              continuo aggiornamento per offrirvi un servizio ottimale. Speriamo
-              di soddisfare le vostre esigenze!
-            </p>
-          </div>
-          <div class="col-md-4">
-            <div class="container">
+      <div class="bg-dark text-center py-4 mt-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4" style="margin-bottom: 2px">
               <p
                 style="
                   color: #42dbf0;
@@ -209,95 +214,118 @@
                   font-size: 30px;
                 "
               >
-                Esplora il nostro sito
+                MySport GoEasy
               </p>
-              <a
-                class="nav-link"
-                href="/MySport-GoEasy/html/tornei.html"
+              <p style="color: #aaa7a7; font-size: 14.1px">
+                Crea e gestisci i tuoi tornei in maniera semplice ed intuitiva!
+              </p>
+              <p style="color: white; top: 0px; font-size: 16px">
+                Il sito web, l'app Android ed il programma Windows sono sempre
+                in continuo aggiornamento per offrirvi un servizio ottimale.
+                Speriamo di soddisfare le vostre esigenze!
+              </p>
+            </div>
+            <div class="col-md-4">
+              <div class="container">
+                <p
+                  style="
+                    color: #42dbf0;
+                    text-shadow: white 1px 1px 1px;
+                    font-size: 30px;
+                  "
+                >
+                  Esplora il nostro sito
+                </p>
+                <a
+                  class="nav-link"
+                  href="/MySport-GoEasy/html/tornei.html"
+                  style="
+                    color: white;
+                    background-color: transparent;
+                    border-top: 2px solid #aaa7a7;
+                    font-size: 14.1px;
+                  "
+                >
+                  Ottieni una prima visualizzazione sul web dei tornei
+                  <i class="fa-solid fa-arrow-right" style="right: 0px"></i>
+                </a>
+                <a
+                  class="nav-link"
+                  style="
+                    color: white;
+                    background-color: transparent;
+                    border-top: 2px solid #aaa7a7;
+                    font-size: 14.1px;
+                  "
+                  href="/MySport-GoEasy/html/manuale.html"
+                >
+                  Un'assistenza web completa ed ottimale all'utilizzo
+                  <i class="fa-solid fa-arrow-right" style="right: 0px"></i>
+                </a>
+                <a
+                  class="nav-link"
+                  style="
+                    color: white;
+                    background-color: transparent;
+                    border-top: 2px solid #aaa7a7;
+                    font-size: 14.1px;
+                  "
+                  href="/MySport-GoEasy/html/about.html"
+                >
+                  Cos'è e da dove nasce la nostra idea
+                  <i class="fa-solid fa-arrow-right" style="right: 0px"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <p
                 style="
-                  color: white;
-                  background-color: transparent;
-                  border-top: 2px solid #aaa7a7;
-                  font-size: 14.1px;
+                  color: #42dbf0;
+                  text-shadow: white 1px 1px 1px;
+                  font-size: 30px;
                 "
               >
-                Ottieni una prima visualizzazione sul web dei tornei
-                <i class="fa-solid fa-arrow-right" style="right: 0px"></i>
-              </a>
-              <a
-                class="nav-link"
-                style="
-                  color: white;
-                  background-color: transparent;
-                  border-top: 2px solid #aaa7a7;
-                  font-size: 14.1px;
-                "
-                href="/MySport-GoEasy/html/manuale.html"
-              >
-                Un'assistenza web completa ed ottimale all'utilizzo
-                <i class="fa-solid fa-arrow-right" style="right: 0px"></i>
-              </a>
-              <a
-                class="nav-link"
-                style="
-                  color: white;
-                  background-color: transparent;
-                  border-top: 2px solid #aaa7a7;
-                  font-size: 14.1px;
-                "
-                href="/MySport-GoEasy/html/about.html"
-              >
-                Cos'è e da dove nasce la nostra idea
-                <i class="fa-solid fa-arrow-right" style="right: 0px"></i>
+                Contattaci
+              </p>
+              <p style="color: white; top: 0px; font-size: 16px">
+                In caso di problemi di visulizzazione o di accesso ai dati vi
+                preghiamo di inviare una email di segnalazione seguendo il link
+                quì presente
+              </p>
+              <a href="mailto:eagle209@gmail.com">
+                <i
+                  class="fa-regular fa-paper-plane fa-2xl"
+                  style="color: #42dbf0"
+                ></i>
               </a>
             </div>
           </div>
-          <div class="col-md-4">
-            <p
-              style="
-                color: #42dbf0;
-                text-shadow: white 1px 1px 1px;
-                font-size: 30px;
-              "
-            >
-              Contattaci
-            </p>
-            <p style="color: white; top: 0px; font-size: 16px">
-              In caso di problemi di visulizzazione o di accesso ai dati vi
-              preghiamo di inviare una email di segnalazione seguendo il link
-              quì presente
-            </p>
-            <a href="mailto:eagle209@gmail.com">
-              <i
-                class="fa-regular fa-paper-plane fa-2xl"
-                style="color: #42dbf0"
-              ></i>
-            </a>
-          </div>
         </div>
       </div>
-    </div>
 
-    <br />
+      <br />
+      <br />
 
-    <!-- Sezione donate -->
-    <div class="container" style="text-align: center; width: 100%">
-      <div class="text-container" style="width: 100%">
-        <h3>Ogni forma di supporto e contributo è ben accetta</h3>
+      <!-- Sezione donate -->
+      <div class="container" style="text-align: center; width: 100%">
+        <div class="text-container" style="width: 100%">
+          <h3>Ogni forma di supporto e contributo è ben accetta</h3>
+        </div>
+        <a
+          href="https://PayPal.Me/Eagle209"
+          class="btn btn-primary btn-lg"
+          style="
+            border-radius: 3em;
+            background: #42dbf0;
+            border-color: #42dbf0;
+            color: black;
+          "
+          ><i class="fa-brands fa-paypal"></i> Donate</a
+        >
       </div>
-      <a
-        href="https://PayPal.Me/Eagle209"
-        class="btn btn-primary btn-lg"
-        style="
-          border-radius: 3em;
-          background: #42dbf0;
-          border-color: #42dbf0;
-          color: black;
-        "
-        ><i class="fa-brands fa-paypal"></i> Donate</a
-      >
-    </div>
 
+      <br />
+    </div>
     <!-- FootBar -->
     <footer class="bg-dark text-white text-center py-4 mt-4">
       <div class="container">

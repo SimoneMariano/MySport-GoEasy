@@ -25,6 +25,25 @@
     <script src="/MySport-GoEasy/js/cookieHandler.js"></script>
     <script src="/MySport-GoEasy/js/squadreHandler.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        flex: 1;
+      }
+      footer {
+        text-align: center;
+      }
+    </style>
+
   </head>
 
   <body onload="completeSquad(); titleAppend(); stopBanner();">
@@ -35,6 +54,8 @@
       include-html="/MySport-GoEasy/html/partials/navbar.html"
       class="sticky-top"
     ></div>
+
+    <div class="content">
 
     <br />
 
@@ -97,6 +118,8 @@
         style="width: 100%; padding-bottom: 50px"
         id="content"
       ></div>
+    </div>
+
     </div>
 
     <!-- FootBar -->

@@ -25,82 +25,115 @@
       src="https://kit.fontawesome.com/1d057fd301.js"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        flex: 1;
+      }
+      footer {
+        text-align: center;
+      }
+    </style>
   </head>
 
   <body onload="stopBannerGeneral();">
     <!-- Navbar -->
-    <div include-html="/MySport-GoEasy/html/partials/navbar.html" class="sticky-top"></div>
-
-    <br />
-    <header class="jumbotron">
-      <div class="container">
-        <h1 class="display-4">Manuali</h1>
-      </div>
-    </header>
-
-    <br>
-
-    <section class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h2>Versione Full/Server</h2>
-          <p>
-            <b>MySport GoEasy</b>, nella versione per Windows, è dotato di un
-            help online che consente il suo utilizzo in modo completo ed
-            ottimale.<br />
-            Il manuale è in corso di completamento, ma i contenuti attualmente
-            presenti vengono comunque resi disponibili in questo sito tramite
-            <a
-              href="/MySport-GoEasy/Build_html_doc/MySport%20GoEasy%20Help.html"
-              class="colored-link"
-              target="_blank"
-              style="color: black; text-shadow: #42dbf0; text-decoration: underline dotted #42dbf0;"
-              ><b>questo link.</b></a
-            >
-          </p>
-          <br />
-          <h2>Versione Client</h2>
-          <p>
-            <b>MySport GoEasy (Mobile)</b>, nella versione per Android, non è
-            ancora dotato di un help.<br />
-            Il manuale è in corso di completamento, ma comunque i contenuti
-            attualmente presenti sono disponibili in questo sito tramite
-            <a
-              href="/MySport-GoEasy/Mobil_html_doc/MySport%20GoEasy%20Mobile%20Help.html"
-              class="colored-link"
-              target="_blank"
-              style="color: black; text-shadow: #42dbf0; text-decoration: underline dotted #42dbf0;"
-              ><b>questo link.</b></a
-            >
-          </p>
+    <div
+      include-html="/MySport-GoEasy/html/partials/navbar.html"
+      class="sticky-top"
+    ></div>
+    <div class="content">
+      <br />
+      <header class="jumbotron">
+        <div class="container">
+          <h1 class="display-4">Manuali</h1>
         </div>
-        <div
-          class="col-8 col-md-4 justify-content-md-center"
-          style="
-            display: block;
-            margin: 0px auto;
-            text-align: center;
-            padding-top: 16px;
-          "
-        >
-          <img class="img-thumbnail" src="/MySport-GoEasy/images/manuale_home.jpg" />
+      </header>
+
+      <br />
+
+      <section class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Versione Full/Server</h2>
+            <p>
+              <b>MySport GoEasy</b>, nella versione per Windows, è dotato di un
+              help online che consente il suo utilizzo in modo completo ed
+              ottimale.<br />
+              Il manuale è in corso di completamento, ma i contenuti attualmente
+              presenti vengono comunque resi disponibili in questo sito tramite
+              <a
+                href="/MySport-GoEasy/Build_html_doc/MySport%20GoEasy%20Help.html"
+                class="colored-link"
+                target="_blank"
+                style="
+                  color: black;
+                  text-shadow: #42dbf0;
+                  text-decoration: underline dotted #42dbf0;
+                "
+                ><b>questo link.</b></a
+              >
+            </p>
+            <br />
+            <h2>Versione Client</h2>
+            <p>
+              <b>MySport GoEasy (Mobile)</b>, nella versione per Android, non è
+              ancora dotato di un help.<br />
+              Il manuale è in corso di completamento, ma comunque i contenuti
+              attualmente presenti sono disponibili in questo sito tramite
+              <a
+                href="/MySport-GoEasy/Mobil_html_doc/MySport%20GoEasy%20Mobile%20Help.html"
+                class="colored-link"
+                target="_blank"
+                style="
+                  color: black;
+                  text-shadow: #42dbf0;
+                  text-decoration: underline dotted #42dbf0;
+                "
+                ><b>questo link.</b></a
+              >
+            </p>
+          </div>
           <div
-            class="rounded border"
+            class="col-8 col-md-4 justify-content-md-center"
             style="
-              margin-bottom: 8px;
-              margin-top: 8px;
-              max-width: fit-content;
-              padding: 4px;
-              margin-left: auto;
-              margin-right: auto;
+              display: block;
+              margin: 0px auto;
+              text-align: center;
+              padding-top: 16px;
             "
           >
-            MSGE Manuale: Pagina iniziale
+            <img
+              class="img-thumbnail"
+              src="/MySport-GoEasy/images/manuale_home.jpg"
+            />
+            <div
+              class="rounded border"
+              style="
+                margin-bottom: 8px;
+                margin-top: 8px;
+                max-width: fit-content;
+                padding: 4px;
+                margin-left: auto;
+                margin-right: auto;
+              "
+            >
+              MSGE Manuale: Pagina iniziale
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <br />
+      </section>
+      <br />
+    </div>
 
     <!-- FootBar -->
     <div include-html="/MySport-GoEasy/html/partials/bottombar.html"></div>
