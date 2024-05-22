@@ -61,14 +61,14 @@ function completeCalendar() {
             parziale.push(risultato[o].split("-"));
           }
 
-          for (var x = 1; x<=5; x++){
-            if (parziale[x][0].length == 1){
+          for (var x = 1; x <= 5; x++) {
+            if (parziale[x][0].length == 1) {
               parziale[x][0] = "0" + parziale[x][0];
             }
           }
 
-          for (var y = 1; y<=5; y++){
-            if (parziale[y][1].length == 1){
+          for (var y = 1; y <= 5; y++) {
+            if (parziale[y][1].length == 1) {
               parziale[y][1] = "0" + parziale[y][1];
             }
           }
@@ -84,7 +84,6 @@ function completeCalendar() {
 
           codice = noteArbitro[0];
           note = noteArbitro[1];
-        
 
           var orarioGara = data[i].orarioGara.split(" ");
           var orario = orarioGara[1].split(":");
@@ -96,7 +95,8 @@ function completeCalendar() {
           var giorni = giorno[2];
 
           dataList.append(
-            '<div class="container-fluid border-bottom" data-bs-toggle="modal" data-bs-target="#modal' +
+            '<div class="container-fluid border-bottom" style="padding: 20px;"' +
+              'data-bs-toggle="modal" data-bs-target="#modal' +
               data[i].numeroPartita +
               '" onMouseOver="this.style.backgroundColor=\'lightgray\'" onMouseOut="this.style.backgroundColor=\'\'">' +
               '<div class="row">' +
@@ -111,14 +111,17 @@ function completeCalendar() {
               "</b> | Ora: <b>" +
               ore +
               "." +
-              minuti + ' ' + note +
+              minuti +
+              " " +
+              note +
               "</b></p></div></div>" +
               '<div class="row">' +
               '<div class="col">' +
-              '<div class="row align-items-center">' +
+              '<div class="row align-items-center" style="padding-bottom: 10px;">' +
               '<div class="col-auto">' +
               '<img style="max-width: 75%; padding: 8px;" src="/MySport-GoEasy/data/' +
-              data[i].codiceTorneo + '/icon/' +
+              data[i].codiceTorneo +
+              "/icon/" +
               img1 +
               '" class="img-fluid" /></div>' +
               '<div class="col"><p class="mb-0"><b>' +
@@ -140,7 +143,8 @@ function completeCalendar() {
               "</p></div></div></div></div></div>" +
               '<div class="row"><div class="col"><div class="row align-items-center"><div class="col-auto">' +
               '<img style="max-width: 75%; padding: 8px;" src="/MySport-GoEasy/data/' +
-              data[i].codiceTorneo + '/icon/' +
+              data[i].codiceTorneo +
+              "/icon/" +
               img2 +
               '" class="img-fluid" /></div>' +
               '<div class="col"><p class="mb-0"><b>' +
@@ -177,7 +181,7 @@ function completeCalendar() {
               ore +
               "." +
               minuti +
-              ' - ' +
+              " - " +
               giorni +
               "/" +
               mese +
@@ -209,15 +213,15 @@ function completeCalendar() {
               risultato[4] +
               "/" +
               risultato[5] +
-              ']</div></div></div>' +
+              "]</div></div></div>" +
               '<div class="row"><div class="col py-0"><div class="text-center">' +
               '<p class="text">Indirizzo campo: ' +
               '<a href="http://maps.google.com/?q=' +
-                data[i].indirizzoSquadra +
-                '" target="_blank">' +
-                data[i].indirizzoSquadra +
-                "</a>" +
-                "</p>" +
+              data[i].indirizzoSquadra +
+              '" target="_blank">' +
+              data[i].indirizzoSquadra +
+              "</a>" +
+              "</p>" +
               '</div></div></div><div class="row"><div class="col py-0"><div class="text-center">' +
               note +
               '</div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">' +

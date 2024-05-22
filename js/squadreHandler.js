@@ -44,15 +44,16 @@ function completeSquad() {
 
         dataList.append(
 
-          '<div class="col-sm-4"><div class="card shadow p-3 mb-5 bg-body rounded" style="text-align: center; margin: 5px; this.hover: gray;" data-bs-toggle="modal" data-bs-target="#modal'+ 
+          '<div class="col-sm-4"><div class="card shadow p-3 mb-5 h-75 bg-body rounded" style="text-align: center; this.hover: gray;"' +
+          ' data-bs-toggle="modal" data-bs-target="#modal'+ 
           i +
-          '"><div class="row g-0"><div class="col-lg-4"><img  style="margin-top: 4px;" src="/MySport-GoEasy/data/'+
+          '"><div class="row g-0 h-100"><div class="col-lg-4"><img  style="margin-top: 4px;" src="/MySport-GoEasy/data/'+
           data[i].codiceTorneo +
           '/icon/'+
           data[i].nomeSquadra +
           '.jpg" class="img-fluid rounded-start" /></div><div class="col-lg-8"><div class="card-body"><h6 class="card-title">'+
           data[i].nomeSquadra +
-          '</h6> </div></div><i class="fa-solid fa-caret-down fa-2xs" style="color: #c0c0c0;"></i></div></div></div>'+
+          '</h6></div></div></div><i class="fa-solid fa-caret-down fa-2xs" style="color: #c0c0c0;"></i></div></div>'+
           '<div class="modal fade" id="modal' +
           i +
           '" style="text-align: center; aria-labelledby="ModalLabel' +
