@@ -47,7 +47,7 @@
         display: flex;
         flex-direction: column;
       }
-      .content {
+      .padding {
         flex: 1;
       }
       footer {
@@ -61,108 +61,112 @@
     style="overflow-x: hidden"
   >
     <!-- Navbar -->
-    <div include-html="/MySport-GoEasy/html/partials/navbar.html" class="sticky-top"></div>
+    <div
+      include-html="/MySport-GoEasy/html/partials/navbar.html"
+      class="sticky-top"
+    ></div>      
+      <br />
 
-    <div class="content">
-
-    <br />
-
-    <header class="jumbotron">
-      <div class="container">
-        <h1 class="display-4">Elenco Tornei</h1>
-      </div>
-    </header>
-
-    <br />
-
-    <div class="padding" style="text-align: center">
-      <div class="col-md-12">
-        <div
-          class="wow fadeInUp animated"
-          data-wow-duration="2s"
-          data-wow-delay="0.2s"
-          style="
-            visibility: visible;
-            animation-duration: 2s;
-            animation-delay: 0.2s;
-            animation-name: fadeInUp;
-          "
-        >
-          <p>
-            Questa sezione viene incontro a tutti coloro che non hanno la
-            possibilità di usufruire delle funzionalità di
-            <b>MySport GoEasy</b> tramite <b>applicazione Android</b> o tramite
-            il <b>programma Windows</b>.
-          </p>
-          <p>
-            Selezionando il nome del torneo avrete accesso ai dati riguardanti
-            <b>calendari</b>, <b>classifiche</b> e <b>squadre</b>.
-          </p>
+      <header class="jumbotron">
+        <div class="container">
+          <h1 class="display-4">Elenco Tornei</h1>
         </div>
-        <br />
-        <div class="bg-dark text-center py-4 mt-4">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-md-6 justify-content-center" style="color: white">
-                <p>
-                  Una volta selezionato il torneo verrà richiesto il
-                  <b>codice adesione</b><br />
-                  <a style="color: gray; font-size: small;"> (ex. 12_345 o 12_345_67 o 12_345_AB)</a><br />
-                  Il codice può essere richiesto all'organizzatore o al proprio referente
-                </p>
-              </div>
-              <div class="col-md-4 justify-content-center">
-                <section class="content" id="content"></section>
-              </div>
-              <div class="col-md-2 justify-content-center">
-                <a
-                  onclick="showPopup(event);"
-                  class="btn btn-info my-1"
-                  role="button"
+      </header>
+
+      <br />
+
+      <div class="padding" style="text-align: center">
+        <div class="col-md-12">
+          <div
+            class="wow fadeInUp animated"
+            data-wow-duration="2s"
+            data-wow-delay="0.2s"
+            style="
+              visibility: visible;
+              animation-duration: 2s;
+              animation-delay: 0.2s;
+              animation-name: fadeInUp;
+            "
+          >
+            <p>
+              Questa sezione viene incontro a tutti coloro che non hanno la
+              possibilità di usufruire delle funzionalità di
+              <b>MySport GoEasy</b> tramite <b>applicazione Android</b> o
+              tramite il <b>programma Windows</b>.
+            </p>
+            <p>
+              Selezionando il nome del torneo avrete accesso ai dati riguardanti
+              <b>calendari</b>, <b>classifiche</b> e <b>squadre</b>.
+            </p>
+          </div>
+          <br />
+          <div class="bg-dark text-center py-4 mt-4">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div
+                  class="col-md-6 justify-content-center"
+                  style="color: white"
                 >
-                  Go
-                </a>
+                  <p>
+                    Una volta selezionato il torneo verrà richiesto il
+                    <b>codice adesione</b><br />
+                    <a style="color: gray; font-size: small">
+                      (ex. 12_345 o 12_345_67 o 12_345_AB)</a
+                    ><br />
+                    Il codice può essere richiesto all'organizzatore o al
+                    proprio referente
+                  </p>
+                </div>
+                <div class="col-md-4 justify-content-center">
+                  <section class="content" id="content"></section>
+                </div>
+                <div class="col-md-2 justify-content-center">
+                  <a
+                    onclick="showPopup(event);"
+                    class="btn btn-info my-1"
+                    role="button"
+                  >
+                    Go
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <br />
-    <br />
+      
 
-    <div class="padding" style="text-align: center">
-      <div class="col-md-12">
-        <div
-          class="wow fadeInUp animated"
-          data-wow-duration="2s"
-          data-wow-delay="0.2s"
-          style="
-            visibility: visible;
-            animation-duration: 2s;
-            animation-delay: 0.2s;
-            animation-name: fadeInUp;
-            font-size: small;
-          "
-        >
-          <p>
-            <b>Attenzione</b>: per agevolare la navigazione questa sezione fa
-            utilizzo di cookie.<br />
-            I cookie non registrano alcuna informazione personale dell'utente e
-            gli eventuali dati identificabili non verranno memorizzati.<br />
-            Procedendo in questa pagina l'utente ne accetta l'uso.<br />
-          </p>
-          <p>
-            Per maggiori informazioni visualizza la nostra
-            <a href="/MySport-GoEasy/html/cookie.html">informativa sui cookie</a>.
-            <br />
-          </p>
+      <div class="padding" style="margin-top: 10px; margin-bottom: 10px; text-align: center;">
+        <div class="col-md-12">
+          <div
+            class="wow fadeInUp animated"
+            data-wow-duration="2s"
+            data-wow-delay="0.2s"
+            style="
+              visibility: visible;
+              animation-duration: 2s;
+              animation-delay: 0.2s;
+              animation-name: fadeInUp;
+              font-size: small;
+            "
+          >
+            <p>
+              <b>Attenzione</b>: per agevolare la navigazione questa sezione fa
+              utilizzo di cookie.<br />
+              I cookie non registrano alcuna informazione personale dell'utente
+              e gli eventuali dati identificabili non verranno memorizzati.<br />
+              Procedendo in questa pagina l'utente ne accetta l'uso.<br />
+            </p>
+            <p>
+              Per maggiori informazioni visualizza la nostra
+              <a href="/MySport-GoEasy/html/cookie.html"
+                >informativa sui cookie</a
+              >.
+              <br />
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <br />
-    </div>
 
     <!-- FootBar -->
     <div include-html="/MySport-GoEasy/html/partials/bottombar.html"></div>
