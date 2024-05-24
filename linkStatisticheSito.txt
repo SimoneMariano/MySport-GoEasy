@@ -1,1 +1,16 @@
 https://www.contatoreaccessi.com/geozoom.php?c=rxlrhpx2qy53y6d1qjeyh292d378pf6d&base=counter11
+
+password sito = 243EuE`k!hd] 
+
+Login al pannello di controllo
+
+Username: mysportgoeasy
+Password: ck9HDxZNgJJa
+
+Accedi
+Login via FTP
+
+Server: ftp.mysportgoeasy.altervista.org
+Username: mysportgoeasy
+Password: ck9HDxZNgJJa
+Tipo di connessione: PASV (modalità passiva)

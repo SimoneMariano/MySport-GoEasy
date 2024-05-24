@@ -31,7 +31,6 @@ function setCookie(code) {
   document.cookie = "cartella=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 
   var cartella = code;
-  //console.log(cartella);
 
   var d = new Date();
   d.setTime(d.getTime() + 7 * 24 * 60 * 60 * 1000); //expire cookie dopo 7 giorni

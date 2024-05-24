@@ -30,7 +30,7 @@ function completeCalendar() {
   $(".tabella").html("");
   $(document).ready(function () {
     $.ajax({
-      url: "/MySport-GoEasy/php/calendarioHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
+      url: "/php/calendarioHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
       method: "POST",
       data: {
         cookie: cookie,
@@ -119,7 +119,7 @@ function completeCalendar() {
               '<div class="col">' +
               '<div class="row align-items-center" style="padding-bottom: 10px;">' +
               '<div class="col-auto">' +
-              '<img style="max-width: 75%; padding: 8px;" src="/MySport-GoEasy/data/' +
+              '<img style="max-width: 75%; padding: 8px;" src="/data/' +
               data[i].codiceTorneo +
               "/icon/" +
               img1 +
@@ -142,7 +142,7 @@ function completeCalendar() {
               parziale[5][0] +
               "</p></div></div></div></div></div>" +
               '<div class="row"><div class="col"><div class="row align-items-center"><div class="col-auto">' +
-              '<img style="max-width: 75%; padding: 8px;" src="/MySport-GoEasy/data/' +
+              '<img style="max-width: 75%; padding: 8px;" src="/data/' +
               data[i].codiceTorneo +
               "/icon/" +
               img2 +
@@ -189,13 +189,13 @@ function completeCalendar() {
               anno +
               " - Arb.: " +
               data[i].nomeArbitro +
-              '<br /></div></div></div><div class="row"><div class="col-6"><div class="row"><img class="rounded" src="/MySport-GoEasy/data/' +
+              '<br /></div></div></div><div class="row"><div class="col-6"><div class="row"><img class="rounded" src="/data/' +
               data[i].codiceTorneo +
               "/icon/" +
               img1 +
               '" style="padding: 5px; max-width: 50px; max-height: 50px; margin:auto"/></div><div class="row"><div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
               data[i].squadraCasa +
-              '</div></div></div><div class="col-6"><div class="row"><img class="rounded" src="/MySport-GoEasy/data/' +
+              '</div></div></div><div class="col-6"><div class="row"><img class="rounded" src="/data/' +
               data[i].codiceTorneo +
               "/icon/" +
               img2 +
@@ -226,78 +226,6 @@ function completeCalendar() {
               note +
               '</div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">' +
               "Chiudi</button></div></div></div></div></div>"
-
-            /*
-            '<div class="rigaTab" style="padding-bottom: 5px;" id="_' +
-              data[i].numeroPartita +
-              '">' +
-              '<div class="row">' +
-              '<div class="row">' +
-              '<div class="col py-0">' +
-              '<div class="text-center fw-bolder">[Part.N.: ' +
-              data[i].numeroPartita +
-              "] [Girone: " +
-              data[i].arFlag +
-              "] [Giornata:" +
-              data[i].numeroGiornata +
-              "]</div>" +
-              "</div>" +
-              "</div>" +
-              '<div class="row">' +
-              '<div class="col py-0">' +
-              '<div class="text-center">' +
-              data[i].orarioGara +
-              " - Arb.: " +
-              data[i].nomeArbitro +
-              "</div>" +
-              "</div>" +
-              "</div>" +
-              '<div class="row">' +
-              '<div class="col-6">' +
-              '<img class="d-inline-block rounded" src="/MySport-GoEasy/data/' +
-              data[i].codiceTorneo +
-              "/icon/" +
-              img1 +
-              '" style="padding: 5px; max-width: 50px" />' +
-              '<div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
-              data[i].squadraCasa +
-              "</div>" +
-              "</div>" +
-              '<div class="col-6">' +
-              '<img class="d-inline-block rounded"src="/MySport-GoEasy/data/' +
-              data[i].codiceTorneo +
-              "/icon/" +
-              img2 +
-              '" style="padding: 5px; max-width: 50px" />' +
-              '<div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
-              data[i].squadraTrasferta +
-              "</div>" +
-              "</div>" +
-              "</div>" +
-              "</div>" +
-              '<div class="row">' +
-              '<div class="col py-0">' +
-              '<div class="text-center text-danger fw-bolder">Ris. = ' +
-              risultato[0] +
-              " [" +
-              risultato[1] +
-              "/" +
-              risultato[2] +
-              "/" +
-              risultato[3] +
-              "/" +
-              risultato[4] +
-              "/" +
-              risultato[5] +
-              "]</div>" +
-              "</div>" +
-              "</div>" +
-              '<div class="row">' +
-              '<div class="col py-0">' +
-              '<div class="text-center">' +
-              data[i].noteArbitro +
-              "</div></div>" +
-              "</div></div></div>"*/
           );
         }
       },
@@ -314,11 +242,10 @@ function showSquad() {
   $(document).ready(function () {
     resettaSquad();
     $.ajax({
-      url: "/MySport-GoEasy/php/formCalendarHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
+      url: "/php/formCalendarHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
       method: "POST",
       data: { cookie: cookie },
       success: function (response) {
-        //console.log(response);
         var data = JSON.parse(response);
         var dataList = $("#form1");
         // Loop attraverso i dati e aggiungi elementi alla lista
@@ -353,11 +280,10 @@ function showGiornate() {
   resettaGiornate();
   $(document).ready(function () {
     $.ajax({
-      url: "/MySport-GoEasy/php/giornateCalendarHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
+      url: "/php/giornateCalendarHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
       method: "POST",
       data: { cookie: cookie },
       success: function (response) {
-        //console.log(response);
         var data = JSON.parse(response);
         var dataList = $("#form2");
         // Loop attraverso i dati e aggiungi elementi alla lista
@@ -389,165 +315,3 @@ function resettaGiornate() {
   );
   $(".giornate").append(row);
 }
-
-/*function setFilter() {
-  var nomeFilter = $("#form").val();
-  var giornoFilter = $("#dateStandard").val();
-  console.log(giornoFilter);
-  var giornata = $("#form2").val();
-  var modificaGiornoFilter = giornoFilter.split("-");
-  giornoFilter =
-    modificaGiornoFilter[2] +
-    "/" +
-    modificaGiornoFilter[1] +
-    "/" +
-    modificaGiornoFilter[0];
-
-  checkCookie();
-  var nome = getCookie("cartella");
-  var nomeFile = "/data/" + nome + "/" + nome + "_Calendario.dat";
-  $(".tabella").html("");
-  $.get(nomeFile, function (file) {
-    var riga = file.split("\n");
-    $.each(riga, function (elem) {
-      if (riga[elem] == "") {
-        return;
-      }
-      var data = riga[elem].split(",");
-      var row = "";
-      if (data[i].noteArbitro == "\r") {
-        data[i].noteArbitro = "";
-      }
-
-      img1 = data[i].squadraCasa + ".jpg";
-      img2 = data[i].squadraTrasferta + ".jpg";
-
-      var risultato = data[6].split("/");
-
-      if (risultato[0] == "0-0") {
-        risultato[1] = "0-0";
-        risultato[2] = "0-0";
-        risultato[3] = "0-0";
-        risultato[4] = "0-0";
-        risultato[5] = "0-0";
-      }
-
-      var giorno1 = data[i].orarioGara.split(" ");
-      var giorno2 = giorno1[0];
-      var oggi = Date.now();
-      var oggiGiorno = new Date(oggi).getDate();
-      var oggiMese = new Date(oggi).getMonth();
-      var oggiAnno = new Date(oggi).getFullYear();
-      oggi = oggiGiorno + "/" + oggiMese + "/" + oggiAnno;
-
-      if (
-        ((nomeFilter == data[i].squadraCasa ||
-          nomeFilter == data[i].squadraTrasferta) &&
-          giornoFilter == giorno2 &&
-          giornata == data[1]) ||
-        (nomeFilter == "Selez. il team" &&
-          giornoFilter == giorno2 &&
-          giornata == "Selez. la giornata") ||
-        ((nomeFilter == data[i].squadraCasa ||
-          nomeFilter == data[i].squadraTrasferta) &&
-          giornoFilter == "undefined/undefined/" &&
-          giornata == "Selez. la giornata") ||
-        ((nomeFilter == data[i].squadraCasa ||
-          nomeFilter == data[i].squadraTrasferta) &&
-          giornoFilter == giorno2 &&
-          giornata == "Selez. la giornata") ||
-        ((nomeFilter == data[i].squadraCasa ||
-          nomeFilter == data[i].squadraTrasferta) &&
-          giornoFilter == "undefined/undefined/" &&
-          giornata == data[1]) ||
-        (nomeFilter == "Selez. il team" &&
-          giornoFilter == giorno2 &&
-          giornata == data[1]) ||
-        (nomeFilter == "Selez. il team" &&
-          giornoFilter == "undefined/undefined/" &&
-          giornata == data[1])
-      ) {
-        row = $(
-          '<div class="rigaTab" style="padding-bottom: 5px;" id="_' +
-            data[i].numeroPartita +
-            '">' +
-            '<div class="row">' +
-            '<div class="row">' +
-            '<div class="col py-0">' +
-            '<div class="text-center fw-bolder">[Part.N.: ' +
-            data[i].numeroPartita +
-            "] [Girone: " +
-            data[7] +
-            "] [Giornata:" +
-            data[1] +
-            "]</div>" +
-            "</div>" +
-            "</div>" +
-            '<div class="row">' +
-            '<div class="col py-0">' +
-            '<div class="text-center">' +
-            data[i].orarioGara +
-            " - Arb.: " +
-            data[i].nomeArbitro +
-            "</div>" +
-            "</div>" +
-            "</div>" +
-            '<div class="row">' +
-            '<div class="col-6">' +
-            '<img class="d-inline-block rounded" src="/data/' +
-            nome +
-            "/icon/" +
-            img1 +
-            '" style="padding: 5px; max-width: 50px" />' +
-            '<div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
-            data[i].squadraCasa +
-            "</div>" +
-            "</div>" +
-            '<div class="col-6">' +
-            '<img class="d-inline-block rounded"src="/data/' +
-            nome +
-            "/icon/" +
-            img2 +
-            '" style="padding: 5px; max-width: 50px" />' +
-            '<div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
-            data[i].squadraTrasferta +
-            "</div>" +
-            "</div>" +
-            "</div>" +
-            "</div>" +
-            '<div class="row">' +
-            '<div class="col py-0">' +
-            '<div class="text-center text-danger fw-bolder">Ris. = ' +
-            risultato[0] +
-            " [" +
-            risultato[1] +
-            "/" +
-            risultato[2] +
-            "/" +
-            risultato[3] +
-            "/" +
-            risultato[4] +
-            "/" +
-            risultato[5] +
-            "]</div>" +
-            "</div>" +
-            "</div>" +
-            '<div class="row">' +
-            '<div class="col py-0">' +
-            '<div class="text-center">' +
-            data[i].noteArbitro +
-            "</div></div>" +
-            "</div></div></div>"
-        );
-        //console.log(data);
-        if (
-          data[i].numeroPartita != "undefined" ||
-          data[i].numeroPartita != "" ||
-          data[i].numeroPartita != " "
-        ) {
-          $("#tabella").append(row);
-        }
-      }
-    });
-  });
-}*/

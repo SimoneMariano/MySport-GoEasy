@@ -2,7 +2,7 @@ function showTournament() {
   $(document).ready(function () {
     resettaForm();
     $.ajax({
-      url: "/MySport-GoEasy/php/torneiHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
+      url: "/php/torneiHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
       method: "GET",
       success: function (response) {
         var data = JSON.parse(response);
@@ -50,17 +50,16 @@ function showPopup(event) {
     // If user clicked "OK"
 
     $.ajax({
-      url: "/MySport-GoEasy/php/torneiHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
+      url: "/php/torneiHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
       method: "GET",
       success: function (response) {
-        console.log(response);
         var data = JSON.parse(response);
         for (var i = 0; i < data.length; i++) {
           if (selectedOption === data[i].codiceTorneo) {
             var code = data[i].codiceTorneo;
             setCookie(code);
             window.open(
-              "/MySport-GoEasy/html/tornei/squadre.html",
+              "/html/tornei/squadre.html",
               "_blank"
             );
           }

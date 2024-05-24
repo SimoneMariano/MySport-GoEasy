@@ -8,11 +8,10 @@ function completeSquad() {
   checkCookie();
   var cookie = getCookie("cartella");
   $.ajax({
-    url: "/MySport-GoEasy/php/squadreHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
+    url: "/php/squadreHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
     method: "POST",
     data: { cookie: cookie },
     success: function (response) {
-      //console.log(response);
       var data = JSON.parse(response);
       var dataList = $("#content");
       // Loop attraverso i dati e aggiungi elementi alla lista
@@ -47,7 +46,7 @@ function completeSquad() {
           '<div class="col-sm-4"><div class="card shadow p-3 mb-5 h-75 bg-body rounded" style="text-align: center; this.hover: gray;"' +
           ' data-bs-toggle="modal" data-bs-target="#modal'+ 
           i +
-          '"><div class="row g-0 h-100"><div class="col-lg-4"><img  style="margin-top: 4px;" src="/MySport-GoEasy/data/'+
+          '"><div class="row g-0 h-100"><div class="col-lg-4"><img  style="margin-top: 4px;" src="/data/'+
           data[i].codiceTorneo +
           '/icon/'+
           data[i].nomeSquadra +
@@ -82,7 +81,7 @@ function completeSquad() {
 
           /*'<div class="rigaTab row" style="padding: 3px">' +
             '<div class="col-2 align-self-center">' +
-            '<img class="d-inline-block rounded"src="/MySport-GoEasy/data/' +
+            '<img class="d-inline-block rounded"src="/data/' +
             data[i].codiceTorneo +
             "/icon/" +
             data[i].nomeSquadra +
@@ -128,70 +127,3 @@ function completeSquad() {
     },
   });
 }
-
-function stopBanner() {}
-/*  setTimeout(() => {
-    var verifica = checkLast();
-
-    if (verifica) {
-      return;
-    }
-
-    var num;
-    var item;
-    var trash_row;
-
-    var select0 = document.getElementById("tabella");
-    var select1 = select0.getElementsByClassName("rigaTab");
-
-    num = select1.length - 1;
-    item = select1[num];
-    trash_row = item;
-
-    var select2 = item.getElementsByClassName("col");
-
-    item = select2[0];
-
-    var select3 = item.getElementsByTagName("a");
-
-    item = select3[0];
-
-    if (item != null) {
-      var data = item.title;
-
-      if (data == "Free Web Hosting with PHP5 or PHP7") {
-        $(trash_row).html("");
-      }
-    }
-  }, 500);
-}
-
-function checkLast() {
-  var num;
-  var item;
-  var trash_row;
-
-  var select0 = document.getElementById("tabella");
-  var select1 = select0.getElementsByClassName("rigaTab");
-
-  num = select1.length - 1;
-  item = select1[num];
-  trash_row = item;
-
-  var select2 = item.getElementsByClassName("col");
-
-  num = select2.length - 1;
-  item = select2[num];
-
-  //console.log(item.outerText);
-
-  var data = item.outerText.split(",");
-
-  if (data[5] == "Giorno: undefined" && data[2] == " undefined;") {
-    $(trash_row).html("");
-    return true;
-  } else {
-    return false;
-  }
-}
-*/
