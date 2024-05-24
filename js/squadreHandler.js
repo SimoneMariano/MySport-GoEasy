@@ -79,46 +79,6 @@ function completeSquad() {
             "</a>" +
           '</p></div></div></div></div>'
 
-          /*'<div class="rigaTab row" style="padding: 3px">' +
-            '<div class="col-2 align-self-center">' +
-            '<img class="d-inline-block rounded"src="/data/' +
-            data[i].codiceTorneo +
-            "/icon/" +
-            data[i].nomeSquadra +
-            '.jpg" style="max-width: 50px" />' +
-            "</div>" +
-            '<div class="col-10 align-self-center text-start">' +
-            '<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">' +
-            '<div class="col fw-bold">' +
-            data[i].nomeSquadra +
-            "</div>" +
-            '<div class="col">' +
-            "All.: " +
-            data[i].referenteSquadra +
-            ", " +
-            data[i].telefono +
-            ", "+
-            data[i].email +
-            ";" +
-            "</div>" +
-            '<div class="col">' +
-            "Campo: " +
-            '<a href="http://maps.google.com/?q=' +
-            data[i].indirizzoSquadra +
-            '" target="_blank">' +
-            data[i].indirizzoSquadra +
-            "</a>" +
-            ";" +
-            "</div>" +
-            '<div class="col">' +
-            "Giorno: " +
-            data[i].giornoGaraPreferito +
-            ", " +
-            data[i].oraGaraPreferito +
-            ";</div>" +
-            "</div>" +
-            "</div>" +
-            "</div>"*/
         );
       }
     },
