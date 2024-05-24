@@ -30,14 +30,14 @@
 
     <!-- Script -->
     <!-- Script including HTML -->
-    <script src="./partials/includeHTML.js"></script>
-    <script src="./js/bannerHandler.js"></script>
+    <script src="/html/partials/includeHTML.js"></script>
+    <script src="/js/bannerHandler.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script
       src="https://kit.fontawesome.com/1d057fd301.js"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/scroll.js"></script>
+    <script src="/js/scroll.js"></script>
 
     <style>
       html,
@@ -59,16 +59,16 @@
 
   </head>
 
-  <body onload="stopBannerGeneral();">
+  <body">
     <div class="content">
       <!-- Navbar -->
       <div
-        include-html="./html/partials/navbar.html"
+        include-html="/html/partials/navbar.html"
         class="sticky-top"
       ></div>
 
       <!-- Topimage -->
-      <div include-html="./html/partials/topimage.html"></div>
+      <div include-html="/html/partials/topimage.html"></div>
 
       <!-- Sezione per il download -->
       <div class="padding" style="text-align: center">
@@ -131,76 +131,6 @@
 
       <br />
 
-      <!-- MidbarOld -->
-      <!--
-    <div class="bg-dark text-center py-4 mt-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <p
-              style="
-                color: #42dbf0;
-                text-shadow: white 1px 1px 1px;
-                font-size: 35px;
-              "
-            >
-              Tornei MSGE
-            </p>
-            <p style="color: white; top: 0px; font-size: 14.1px">
-              Ottieni una prima visualizzazione sul web dei tornei
-            </p>
-            <a
-              href="/html/tornei.html"
-              class="btn btn-outline-info btn-sm"
-              style="margin-left: 10px; border-radius: 3em"
-              >Esplora</a
-            >
-          </div>
-          <div class="col-md-4">
-            <p
-              style="
-                color: #42dbf0;
-                text-shadow: white 1px 1px 1px;
-                font-size: 35px;
-              "
-            >
-              Manuale d'uso
-            </p>
-            <p style="color: white; top: 0px; font-size: 14.1px">
-              Un'assistenza web completa ed ottimale all'utilizzo
-            </p>
-            <a
-              href="/html/manuale.html"
-              class="btn btn-outline-info btn-sm"
-              style="margin-left: 10px; border-radius: 3em"
-              >Esplora</a
-            >
-          </div>
-          <div class="col-md-4">
-            <p
-              style="
-                color: #42dbf0;
-                text-shadow: white 1px 1px 1px;
-                font-size: 35px;
-              "
-            >
-              About
-            </p>
-            <p style="color: white; top: 0px; font-size: 14.1px">
-              Cos'è e da dove nasce la nostra idea
-            </p>
-            <a
-              href="/html/about.html"
-              class="btn btn-outline-info btn-sm"
-              style="margin-left: 10px; border-radius: 3em"
-              >Esplora</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-    -->
-
       <div class="bg-dark text-center py-4 mt-4">
         <div class="container">
           <div class="row">
@@ -236,7 +166,7 @@
                 </p>
                 <a
                   class="nav-link"
-                  href="./html/tornei.html"
+                  href="/html/tornei.html"
                   style="
                     color: white;
                     background-color: transparent;
@@ -255,7 +185,7 @@
                     border-top: 2px solid #aaa7a7;
                     font-size: 14.1px;
                   "
-                  href="./html/manuale.html"
+                  href="/html/manuale.html"
                 >
                   Un'assistenza web completa ed ottimale all'utilizzo
                   <i class="fa-solid fa-arrow-right" style="right: 0px"></i>
@@ -268,7 +198,7 @@
                     border-top: 2px solid #aaa7a7;
                     font-size: 14.1px;
                   "
-                  href="./html/about.html"
+                  href="/html/about.html"
                 >
                   Cos'è e da dove nasce la nostra idea
                   <i class="fa-solid fa-arrow-right" style="right: 0px"></i>
