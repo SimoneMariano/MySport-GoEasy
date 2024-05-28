@@ -24,14 +24,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Invia l'email
     if (mail($to, $subject, $body, $headers)) {
-		echo '<script type="text/javascript">window.onload = function () { 
-        	alert("Email inviata con successo"); location.href="/index.html"; } </script>'; 
+        echo '<script type="text/javascript">
+                alert("Email inviata con successo");
+                window.location.href = "/index.html";
+              </script>'; 
     } else {
-        echo "<script type='text/javascript'>window.onload = function () { 
-        	alert('Errore dell'invio dell'email'); location.href='/html/about.html'; } </script>"; 
+        echo '<script type="text/javascript">
+                alert("Errore nell\'invio dell\'email");
+                window.location.href = "/html/about.html";
+              </script>'; 
     }
 } else {
-    echo "<script type='text/javascript'>window.onload = function () { 
-        	alert('Metodo di richiesta non valido'); location.href='/html/about.html'; } </script>"; 
+    echo '<script type="text/javascript">
+            alert("Metodo di richiesta non valido");
+            window.location.href = "/html/about.html";
+          </script>'; 
 }
 ?>
