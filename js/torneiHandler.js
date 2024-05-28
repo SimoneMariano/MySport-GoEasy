@@ -58,10 +58,7 @@ function showPopup(event) {
           if (selectedOption === data[i].codiceTorneo) {
             var code = data[i].codiceTorneo;
             setCookie(code);
-            window.open(
-              "/html/tornei/squadre.html",
-              "_blank"
-            );
+            window.open("/html/tornei/squadre.html", "_blank");
           }
         }
       },
