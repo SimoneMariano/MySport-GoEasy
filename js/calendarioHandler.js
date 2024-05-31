@@ -43,8 +43,8 @@ function completeCalendar() {
         var dataList = $("#tabella");
         // Loop attraverso i dati e aggiungi elementi alla lista
         for (var i = 0; i < data.length; i++) {
-          img1 = data[i].squadraCasa + ".jpg";
-          img2 = data[i].squadraTrasferta + ".jpg";
+          img1 = ((data[i].squadraCasa).toString()).toUpperCase() + ".jpg";
+          img2 = ((data[i].squadraTrasferta).toString()).toUpperCase() + ".jpg";
 
           var risultato = data[i].punteggio.split("/");
 

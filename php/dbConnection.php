@@ -3,7 +3,7 @@
 $servername = "127.0.0.1"; //localhost
 $username = "root"; // il tuo nome utente MySQL o phpMyAdmin
 $password = ""; // la tua password MySQL o phpMyAdmin
-$dbname = "db_pallavolo"; // il nome del tuo database
+$dbname = "volley"; // il nome del tuo database
 
 global $conn;
 $conn = new mysqli($servername, $username, $password, $dbname);
