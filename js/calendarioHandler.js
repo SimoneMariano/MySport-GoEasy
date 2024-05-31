@@ -119,12 +119,12 @@ function completeCalendar() {
               '<div class="col">' +
               '<div class="row align-items-center" style="padding-bottom: 10px;">' +
               '<div class="col-auto">' +
-              '<img style="max-width: 75%; padding: 8px;" src="/data/' +
+              '<img style="max-width: 30%; padding: 8px;" src="/data/' +
               data[i].codiceTorneo +
               "/icon/" +
               img1 +
-              '" onerror="this.onerror=null; this.src=\'/images/icon.png\';" class="img-fluid" /></div>' +
-              '<div class="col"><p class="mb-0"><b>' +
+              '" onerror="this.onerror=null; this.src=\'/images/msgelogo.jpg\';" class="img-fluid" /></div>' +
+              '<div class="col" text-start><p class="mb-0" style="text-align: start;"><b>' +
               data[i].squadraCasa +
               "</b></p></div>" +
               '<div class="col text-end">' +
@@ -141,13 +141,14 @@ function completeCalendar() {
               " - " +
               parziale[5][0] +
               "</p></div></div></div></div></div>" +
-              '<div class="row"><div class="col"><div class="row align-items-center"><div class="col-auto">' +
-              '<img style="max-width: 75%; padding: 8px;" src="/data/' +
+              '<div class="row"><div class="col"><div class="row align-items-center">' +
+              '<div class="col-auto">' +
+              '<img style="max-width: 30%; padding: 8px;" src="/data/' +
               data[i].codiceTorneo +
               "/icon/" +
               img2 +
-              '" onerror="this.onerror=null; this.src=\'/images/icon.png\';" class="img-fluid" /></div>' +
-              '<div class="col"><p class="mb-0"><b>' +
+              '" onerror="this.onerror=null; this.src=\'/images/msgelogo.jpg\';" class="img-fluid" /></div>' +
+              '<div class="col" text-start><p class="mb-0" style="text-align: start;"><b>' +
               data[i].squadraTrasferta +
               "</b></p></div>" +
               '<div class="col text-end">' +
@@ -193,13 +194,13 @@ function completeCalendar() {
               data[i].codiceTorneo +
               "/icon/" +
               img1 +
-              '" onerror="this.onerror=null; this.src=\'/images/icon.png\';" style="padding: 5px; max-width: 50px; max-height: 50px; margin:auto"/></div><div class="row"><div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
+              '" onerror="this.onerror=null; this.src=\'/images/msgelogo.jpg\';" style="padding: 5px; max-width: 50px; max-height: 50px; margin:auto"/></div><div class="row"><div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
               data[i].squadraCasa +
               '</div></div></div><div class="col-6"><div class="row"><img class="rounded" src="/data/' +
               data[i].codiceTorneo +
               "/icon/" +
               img2 +
-              '" onerror="this.onerror=null; this.src=\'/images/icon.png\';" style="padding: 5px; max-width: 50px; max-height: 50px; margin:auto"/></div><div class="row"><div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
+              '" onerror="this.onerror=null; this.src=\'/images/msgelogo.jpg\';" style="padding: 5px; max-width: 50px; max-height: 50px; margin:auto"/></div><div class="row"><div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
               data[i].squadraTrasferta +
               '</div></div></div></div></div><div class="row"><div class="col py-0"><div class="text-center text-danger fw-bolder">Ris. = ' +
               risultato[0] +
