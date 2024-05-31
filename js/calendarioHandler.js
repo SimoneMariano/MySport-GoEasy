@@ -123,7 +123,7 @@ function completeCalendar() {
               data[i].codiceTorneo +
               "/icon/" +
               img1 +
-              '" class="img-fluid" /></div>' +
+              '" onerror="this.onerror=null; this.src=\'/images/icon.png\';" class="img-fluid" /></div>' +
               '<div class="col"><p class="mb-0"><b>' +
               data[i].squadraCasa +
               "</b></p></div>" +
@@ -146,7 +146,7 @@ function completeCalendar() {
               data[i].codiceTorneo +
               "/icon/" +
               img2 +
-              '" class="img-fluid" /></div>' +
+              '" onerror="this.onerror=null; this.src=\'/images/icon.png\';" class="img-fluid" /></div>' +
               '<div class="col"><p class="mb-0"><b>' +
               data[i].squadraTrasferta +
               "</b></p></div>" +
@@ -193,13 +193,13 @@ function completeCalendar() {
               data[i].codiceTorneo +
               "/icon/" +
               img1 +
-              '" style="padding: 5px; max-width: 50px; max-height: 50px; margin:auto"/></div><div class="row"><div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
+              '" onerror="this.onerror=null; this.src=\'/images/icon.png\';" style="padding: 5px; max-width: 50px; max-height: 50px; margin:auto"/></div><div class="row"><div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
               data[i].squadraCasa +
               '</div></div></div><div class="col-6"><div class="row"><img class="rounded" src="/data/' +
               data[i].codiceTorneo +
               "/icon/" +
               img2 +
-              '"style="padding: 5px; max-width: 50px; max-height: 50px; margin:auto"/></div><div class="row"><div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
+              '" onerror="this.onerror=null; this.src=\'/images/icon.png\';" style="padding: 5px; max-width: 50px; max-height: 50px; margin:auto"/></div><div class="row"><div class="rounded border fw-bolder" style="margin-top: 4px; margin-bottom: 4px; max-width: fit-content; margin-left: auto; margin-right: auto;">' +
               data[i].squadraTrasferta +
               '</div></div></div></div></div><div class="row"><div class="col py-0"><div class="text-center text-danger fw-bolder">Ris. = ' +
               risultato[0] +

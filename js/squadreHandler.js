@@ -50,7 +50,7 @@ function completeSquad() {
           data[i].codiceTorneo +
           '/icon/'+
           data[i].nomeSquadra +
-          '.jpg" class="img-fluid rounded-start" /></div><div class="col-lg-8"><div class="card-body"><h6 class="card-title">'+
+          '.jpg" onerror="this.onerror=null; this.src=\'/images/icon.png\';" class="img-fluid rounded-start" /></div><div class="col-lg-8"><div class="card-body"><h6 class="card-title">'+
           data[i].nomeSquadra +
           '</h6></div></div></div><i class="fa-solid fa-caret-down fa-2xs" style="color: #c0c0c0;"></i></div></div>'+
           '<div class="modal fade" id="modal' +
