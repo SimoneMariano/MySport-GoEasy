@@ -37,6 +37,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/scroll.js"></script>
+    <script async src="/js/cookieBanner.js"></script>
 
     <style>
       html,
@@ -54,17 +55,25 @@
       footer {
         text-align: center;
       }
+      #cb-cookie-banner {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+        z-index: 999;
+        border-radius: 3em;
+        display: none;
+        font-size: small;
+        margin: auto;
+      }
     </style>
-
   </head>
 
-  <body">
+  <body>
     <div class="content">
       <!-- Navbar -->
-      <div
-        include-html="/html/partials/navbar.html"
-        class="sticky-top"
-      ></div>
+      <div include-html="/html/partials/navbar.html" class="sticky-top"></div>
 
       <!-- Topimage -->
       <div include-html="/html/partials/topimage.html"></div>
@@ -258,11 +267,39 @@
       <div class="container">
         <div class="row">
           <div class="row text-center">
-            <p style="color: #aaa7a7; font-size: 16px">&copy; 2024 Simone Mariano</p>
+            <p style="color: #aaa7a7; font-size: 16px">
+              &copy; 2024 Simone Mariano
+            </p>
           </div>
         </div>
       </div>
     </footer>
+
+    <!-- Cookie Banner -->
+    <div
+      id="cb-cookie-banner"
+      class="alert alert-dark text-center mb-0"
+      role="alert"
+      style="display: flex;
+          flex-direction: column;
+          align-items: center;"
+    >
+      <p>
+      Questo sito utilizza cookie tecnici. <br />Proseguendo nella navigazione
+      accetti l’utilizzo dei cookie. <br />Per maggiori informazioni consulta
+      la nostra <br />
+      <a href="/html/cookie.html" target="blank">Informativa</a>.
+      </p>
+      <button
+      type="button"
+      class="btn btn-success btn-sm"
+      onclick="window.cb_hideCookieBanner()"
+      style="margin: 0 auto;"
+      >
+      Accetta
+      </button>
+    </div>
+    <!-- End of Cookie Banner -->
 
     <!-- Bootstrap JS -->
     <script
