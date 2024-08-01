@@ -11,7 +11,7 @@ function showCookieBanner(){
 }
 
 /**
- * @description Hides the Cookie banner and saves the value to localstorage
+ * @description Saves the value to localstorage and Hides the Cookie banner
  */
 function hideCookieBanner(){
     localStorage.setItem("cb_isCookieAccepted", "yes");
@@ -33,8 +33,14 @@ function initializeCookieBanner(){
     if(isCookieAccepted === "no"){
         showCookieBanner();
     }
+    if(isCookieAccepted === "yes"){
+        let cookieBanner = document.getElementById("cb-cookie-banner");
+        cookieBanner.style.display = "none";
+    }
 }
 
 // Assigning values to window object
 window.onload = initializeCookieBanner();
-window.cb_hideCookieBanner = hideCookieBanner;
+window.showCookieBanner = showCookieBanner;
+window.hideCookieBanner = hideCookieBanner;
+window.initializeCookieBanner = initializeCookieBanner;
