@@ -1,46 +1,39 @@
-/*
-* Javascript to show and hide cookie banner using localstorage
-*/
+document.addEventListener('DOMContentLoaded', function () {
+    var cookieBanner = document.getElementById('cb-cookie-banner');
+    var acceptButton = document.getElementById('cb-cookie-accept');
 
-/**
- * @description Shows the cookie banner
- */
-function showCookieBanner(){
-    let cookieBanner = document.getElementById("cb-cookie-banner");
-    cookieBanner.style.display = "block";
-}
-
-/**
- * @description Saves the value to localstorage and Hides the Cookie banner
- */
-function hideCookieBanner(){
-    localStorage.setItem("cb_isCookieAccepted", "yes");
-
-    let cookieBanner = document.getElementById("cb-cookie-banner");
-    cookieBanner.style.display = "none";
-}
-
-/**
- * @description Checks the localstorage and shows Cookie banner based on it.
- */
-function initializeCookieBanner(){
-    let isCookieAccepted = localStorage.getItem("cb_isCookieAccepted");
-    if(isCookieAccepted === null)
-    {
-        localStorage.setItem("cb_isCookieAccepted", "no");
-        showCookieBanner();
+    // Funzione per impostare un cookie
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
     }
-    if(isCookieAccepted === "no"){
-        showCookieBanner();
-    }
-    if(isCookieAccepted === "yes"){
-        let cookieBanner = document.getElementById("cb-cookie-banner");
-        cookieBanner.style.display = "none";
-    }
-}
 
-// Assigning values to window object
-window.onload = initializeCookieBanner();
-window.showCookieBanner = showCookieBanner;
-window.hideCookieBanner = hideCookieBanner;
-window.initializeCookieBanner = initializeCookieBanner;
+    // Funzione per ottenere il valore di un cookie
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Mostra il banner solo se l'utente non ha ancora fatto una scelta
+    if (!getCookie('userConsent')) {
+        cookieBanner.style.display = 'block';
+    }
+
+    // Gestione dell'accettazione dei cookie
+    acceptButton.addEventListener('click', function () {
+        setCookie('userConsent', 'accepted', 365);
+        cookieBanner.style.display = 'none';
+    });
+
+});
