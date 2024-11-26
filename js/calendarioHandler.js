@@ -119,7 +119,7 @@ function completeCalendar() {
               '<div class="col">' +
               '<div class="row align-items-center" style="padding-bottom: 10px;">' +
               '<div class="col-auto">' +
-              '<img style="max-width: 30%; padding: 8px;" src="/data/' +
+              '<img style="max-width: 85px; max-height: 85px; padding: 8px;" src="/data/' +
               data[i].codiceTorneo +
               "/icon/" +
               img1 +
@@ -143,7 +143,7 @@ function completeCalendar() {
               "</p></div></div></div></div></div>" +
               '<div class="row"><div class="col"><div class="row align-items-center">' +
               '<div class="col-auto">' +
-              '<img style="max-width: 30%; padding: 8px;" src="/data/' +
+              '<img style="max-width: 85px; max-height: 85px; padding: 8px;" src="/data/' +
               data[i].codiceTorneo +
               "/icon/" +
               img2 +
