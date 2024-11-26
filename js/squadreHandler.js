@@ -46,7 +46,7 @@ function completeSquad() {
           '<div class="col-sm-4"><div class="card shadow p-3 mb-5 h-75 bg-body rounded" style="text-align: center; this.hover: gray;"' +
           ' data-bs-toggle="modal" data-bs-target="#modal'+ 
           i +
-          '"><div class="row g-0 h-100"><div class="col-lg-4"><img  style="margin-top: 4px;" src="/data/'+
+          '"><div class="row g-0 h-100"><div class="col-lg-4"><img  style="margin-top: 4px; max-width: 85px; max-height: 85px;" src="/data/'+
           data[i].codiceTorneo +
           '/icon/'+
           data[i].nomeSquadra +

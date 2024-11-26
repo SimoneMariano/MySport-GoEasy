@@ -101,7 +101,7 @@ function completeCalendar() {
               '" onMouseOver="this.style.backgroundColor=\'lightgray\'" onMouseOut="this.style.backgroundColor=\'\'">' +
               '<div class="row">' +
               '<div class="col">' +
-              '<p class="mb-0 center-horizontal" style="text-align: center; margin: 0 auto">' +
+              '<p class="mb-0" style="text-align: center; margin: 0 auto">' +
               "Data: <b>" +
               giorni +
               "/" +

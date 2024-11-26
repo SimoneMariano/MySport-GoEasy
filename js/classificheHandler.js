@@ -36,7 +36,7 @@
 
               '<div class="col-sm-4"><div class="card shadow p-3 mb-5 bg-body rounded" style="text-align: center; margin: 5px; this.hover: gray;" data-bs-toggle="modal" data-bs-target="#modal'+ 
               data[i].posizioneClassifica +
-              '"><div class="row g-0"><div class="col-lg-4"><img  style="margin-top: 4px;" src="/data/'+
+              '"><div class="row g-0"><div class="col-lg-4"><img  style="margin-top: 4px; max-width: 85px; max-height: 85px;" src="/data/'+
               data[i].codiceTorneo +
               '/icon/'+
               data[i].nomeSquadra +
