@@ -16,7 +16,12 @@ function titleAppend() {
             '<h3 class="text-black" align=center>' +
               nomePagina + ' ' +
               data[i].nomeTorneo +
-              "</h3>"
+              '</h3>' +
+              '<img style="max-width: 450px; padding: 8px;" src="/data/' +
+              cookie +
+              "/icon/" +
+              data[i].nomeTorneo +
+              '.jpg" onerror="this.onerror=null;" class="img-fluid" align=center/>'
           );
         }
       },
