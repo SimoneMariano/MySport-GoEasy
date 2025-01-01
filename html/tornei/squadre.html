@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
     <title>Squadre</title>
 
     <link
@@ -27,7 +30,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script async src="/js/cookieBanner.js"></script>
 
-
     <style>
       html,
       body {
@@ -45,83 +47,77 @@
         text-align: center;
       }
     </style>
-
   </head>
 
   <body onload="completeSquad(); titleAppend();">
     <!-- Topimage -->
     <div include-html="/html/partials/topimage.html"></div>
     <!-- Navbar -->
-    <div
-      include-html="/html/partials/navbar.html"
-      class="sticky-top"
-    ></div>
+    <div include-html="/html/partials/navbar.html" class="sticky-top"></div>
 
     <div class="content">
+      <br />
 
-    <br />
+      <!-- Body -->
 
-    <!-- Body -->
+      <div class="row" align="center" style="width: 100%; margin: 0">
+        <section class="tabellone" id="tabellone"></section>
+      </div>
 
-    <div class="row" align="center" style="width: 100%; margin: 0;">
-      <section class="tabellone" id="tabellone"></section>
-    </div>
+      <div class="container-fluid" style="width: 100%">
+        <div class="row" style="width: 100%; margin: 0">
+          <div class="col" align="left">
+            <a
+              href="/html/tornei/classifiche.html"
+              role="button"
+              class="btn"
+              style="
+                border-radius: 3em;
+                background: #42dbf0;
+                border-color: #42dbf0;
+                color: black;
+              "
+              ><i
+                class="fa-solid fa-chevron-right fa-flip-horizontal"
+                style="color: black"
+              ></i>
+              Classifica</a
+            >
+          </div>
 
-    <div class="container-fluid" style="width: 100%">
-      <div class="row" style="width: 100%; margin: 0;">
-        <div class="col" align="left">
-          <a
-            href="/html/tornei/classifiche.html"
-            role="button"
-            class="btn"
-            style="
-              border-radius: 3em;
-              background: #42dbf0;
-              border-color: #42dbf0;
-              color: black;
-            "
-            ><i
-              class="fa-solid fa-chevron-right fa-flip-horizontal"
-              style="color: black"
-            ></i>
-            Classifica</a
-          >
-        </div>
-
-        <div class="col" align="right">
-          <a
-            href="/html/tornei/calendario.html"
-            role="button"
-            class="btn"
-            style="
-              border-radius: 3em;
-              background: #42dbf0;
-              border-color: #42dbf0;
-              color: black;
-            "
-            >Calendario
-            <i class="fa-solid fa-chevron-right" style="color: black"></i
-          ></a>
+          <div class="col" align="right">
+            <a
+              href="/html/tornei/calendario.html"
+              role="button"
+              class="btn"
+              style="
+                border-radius: 3em;
+                background: #42dbf0;
+                border-color: #42dbf0;
+                color: black;
+              "
+              >Calendario
+              <i class="fa-solid fa-chevron-right" style="color: black"></i
+            ></a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <br />
+      <br />
 
-    <p class="text" align="center" style="color: gray">
-      Premere su uno dei riquadri per ulteriori informazioni
-    </p>
+      <p class="text" align="center" style="color: gray">
+        Premere su uno dei riquadri per ulteriori informazioni
+      </p>
 
-    <br />
+      <br />
 
-    <div class="container-fluid">
-      <div
-        class="row"
-        style="width: 100%; padding-bottom: 50px; margin: 0;"
-        id="content"
-      ></div>
-    </div>
-
+      <div class="container-fluid">
+        <div
+          class="row"
+          style="width: 100%; padding-bottom: 50px; margin: 0"
+          id="content"
+        ></div>
+      </div>
     </div>
 
     <!-- FootBar -->

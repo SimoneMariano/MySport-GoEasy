@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
     <meta
       name="Keywords"
       content="Campionato,Torneo,Championship,Tournament,Volleyball,Pallavolo,Basketball,Pallacanestro,Gestore calendario,Risultati,Classifica,Finali,Sport,Calcio,Football"
@@ -51,7 +54,6 @@
         text-align: center;
       }
     </style>
-    
   </head>
 
   <body>
@@ -59,233 +61,239 @@
     <div include-html="/html/partials/navbar.html" class="sticky-top"></div>
 
     <div class="content">
-    <br>
+      <br />
 
-    <!-- Intro -->
-    <header class="jumbotron">
-      <div class="container" style="text-align: center;">
-        <h1 class="display-4">
-          <b>Cos'è MySport GoEasy?</b>
-        </h1>
-      </div>
-    </header>
+      <!-- Intro -->
+      <header class="jumbotron">
+        <div class="container" style="text-align: center">
+          <h1 class="display-4">
+            <b>Cos'è MySport GoEasy?</b>
+          </h1>
+        </div>
+      </header>
 
-    <br />
+      <br />
 
-    <!-- Primo blocco -->
-    <section class="container">
-      <div class="row">
-        <!-- Prima immagine -->
-        <div
-          class="col-10 col-md-4"
-          style="
-            display: block;
-            margin: 0px auto;
-            text-align: center;
-            padding-top: 16px;
-          "
-        >
-          <img
-            class="img-thumbnail"
-            src="/images/Schermata1.jpg"
-            alt="Startup"
-          />
+      <!-- Primo blocco -->
+      <section class="container">
+        <div class="row">
+          <!-- Prima immagine -->
           <div
-            class="rounded border"
+            class="col-10 col-md-4"
             style="
-              margin-top: 8px;
-              margin-bottom: 8px;
-              max-width: fit-content;
-              padding: 4px;
-              margin-left: auto;
-              margin-right: auto;
+              display: block;
+              margin: 0px auto;
+              text-align: center;
+              padding-top: 16px;
             "
           >
-            Screenshot 1: Vista Startup
-          </div>
-        </div>
-        <!-- Primo paragrafo -->
-        <div class="txt_1 text-black text-align col-12 col-md-6">
-          <h2>Crea e gestisci i tuoi tornei in maniera semplice ed intuitiva!</h2>
-          <p>
-            MySport GoEasy è un programma di generazione e gestione di
-            campionati o tornei sportivi. Nato principalmente per un utilizzo
-            non professionale, in ambito amatoriale, è stato progressivamente
-            integrato con una serie di funzionalità che lo rendono idoneo anche
-            ad un utilizzo professionale. L'accesso ai dati è semplice ed
-            intuitivo, basta qualche minuto di pratica per essere già in grado
-            di muoversi senza difficoltà tra i vari TAB dellla finestra
-            principale, ed utilizzare le funzionalità essenziali. L'help
-            disponibile su questo sito e incluso nel programma riporta comunque
-            tutte le informazioni sufficienti ad un utilizzo completo del
-            programma, in ogni sua modalità e potenzialità. Gli sport gestiti
-            sono selezionabili da un menu iniziale, ed il piano evolutivo
-            prevede un progressivo ampliamento del loro numero, per le necessità
-            di tutti gli sportivi praticanti, e di quanti allo sport dedicano,
-            per lavoro o passione, energie ed entusiasmo.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <br>
-
-    <!-- Secondo blocco -->
-    <section class="container">
-      <div class="row">
-        <!-- Secondo paragrafo -->
-        <div class="col-md-6">
-          <h2>L'idea di partenza</h2>
-          <p>
-            Spesso in ambito amatoriale, ma probabilmente anche in ambito
-            professionale, l'organizzazione e la gestione di un torneo o di un
-            campionato presenta delle difficoltà oggettive, fin dal momento
-            della generazione dei calendari. C'è poi la necessità di provvedere
-            a costanti aggiornamenti, dei giorni od orari degli incontri, dei
-            risultati e delle classifiche. La pubblicazione e la distribuzione
-            dei dati sono fondamentali, in un mondo dove si è abituati a
-            disporre in tempo reale di informazioni attraverso le reti di
-            social. È tuttavia importante garantire che, nella pubblicazione, le
-            informazioni siano controllate e validate, per non introdurre dubbi
-            o generare contestazioni. Ecco quindi l'idea di un programma che sia
-            un all-in-one ed includa tutte le funzioni che servono. Il progetto
-            è cresciuto col tempo, richiedendo impegno e cura per renderlo
-            utilizzabile al meglio da tutti, gestori ed utenti.
-          </p>
-        </div>
-        <!-- Seconda immagine -->
-        <div
-          class="col-8 col-md-4 justify-content-md-center"
-          style="
-            display: block;
-            margin: 0px auto;
-            text-align: center;
-            padding-top: 16px;
-          "
-        >
-          <img class="img-thumbnail" src="/images/Schermata2.jpg" />
-          <div
-            class="rounded border"
-            style="
-              margin-bottom: 8px;
-              margin-top: 8px;
-              max-width: fit-content;
-              padding: 4px;
-              margin-left: auto;
-              margin-right: auto;
-            "
-          >
-            Screenshot 2: Caricamento Dati
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <br>
-
-    <div class="padding" style="text-align: center">
-      <div class="col-md-12">
-        <div
-          class="wow fadeInUp animated"
-          data-wow-duration="2s"
-          data-wow-delay="0.2s"
-          style="
-            visibility: visible;
-            animation-duration: 2s;
-            animation-delay: 0.2s;
-            animation-name: fadeInUp;
-          "
-        >
-          <p>
-            <b>Informativa all'utente</b>: per agevolare la navigazione la sezione riguardante i tornei fa
-            utilizzo di cookie.<br />
-            I cookie non registrano alcuna informazione personale dell'utente e
-            gli eventuali dati identificabili non verranno memorizzati.<br />
-          </p>
-          <p>
-            Per maggiori informazioni visualizza la nostra
-            <a href="/html/cookie.html">informativa sui cookie</a>.
-            <br />
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <br>
-
-    <!-- Form Contattaci -->
-    <div class="container">
-      <div class="row justify justify-content-center">
-        <div class="col-11 col-md-8 col-lg-6 col-xl-5">
-          <form
-            action="/php/send_mail.php"
-            method="post"
-          >
-            <div class="card bg-dark" style="border-radius: 3em; padding: 10px">
-              <div class="row mt-0">
-                <div class="col-md-12">
-                  <h3 class="text" style="text-align: center; color: #42dbf0">
-                    Contattaci
-                  </h3>
-                  <p style="color: white; text-align: center">
-                    Usa questo spazio per condividere con noi domande, idee,
-                    commenti, feedback e segnalare eventuali problemi
-                  </p>
-                </div>
-              </div>
-              <div class="form-group row mb-3">
-                <div class="col-md-12 mb-0">
-                  <label for="email" class="mb-1" style="color: white">Email</label>
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder="esempio@provider.com"
-                    name="email"
-                    class="form-control input-box rm-border"
-                    style="border-radius: 3em"
-                    required="required"
-                  />
-                </div>
-              </div>
-              <div class="form-group row">
-                <div class="col-md-12 mb-2">
-                  <label for="messaggio" class="mb-1" style="color: white">Messaggio</label>
-                  <textarea
-                    id="messaggio"
-                    name="messaggio"
-                    type="text"
-                    placeholder="Inserisci il tuo messaggio"
-                    class="form-control input-box rm-border"
-                    style="border-radius: 3em"
-                    required="required"
-                  ></textarea>
-                </div>
-              </div>
-              <div
-                class="form-group row justify-content-center mb-0"
-                style="text-align: center"
-              >
-                <div class="col-md-12 px-3">
-                  <input
-                    type="submit"
-                    value="Invia"
-                    class="btn btn-block btn-outline-info rm-border"
-                    style="border-radius: 3em"
-                  />
-                </div>
-              </div>
+            <img
+              class="img-thumbnail"
+              src="/images/Schermata1.jpg"
+              alt="Startup"
+            />
+            <div
+              class="rounded border"
+              style="
+                margin-top: 8px;
+                margin-bottom: 8px;
+                max-width: fit-content;
+                padding: 4px;
+                margin-left: auto;
+                margin-right: auto;
+              "
+            >
+              Screenshot 1: Vista Startup
             </div>
-          </form>
+          </div>
+          <!-- Primo paragrafo -->
+          <div class="txt_1 text-black text-align col-12 col-md-6">
+            <h2>
+              Crea e gestisci i tuoi tornei in maniera semplice ed intuitiva!
+            </h2>
+            <p>
+              MySport GoEasy è un programma di generazione e gestione di
+              campionati o tornei sportivi. Nato principalmente per un utilizzo
+              non professionale, in ambito amatoriale, è stato progressivamente
+              integrato con una serie di funzionalità che lo rendono idoneo
+              anche ad un utilizzo professionale. L'accesso ai dati è semplice
+              ed intuitivo, basta qualche minuto di pratica per essere già in
+              grado di muoversi senza difficoltà tra i vari TAB dellla finestra
+              principale, ed utilizzare le funzionalità essenziali. L'help
+              disponibile su questo sito e incluso nel programma riporta
+              comunque tutte le informazioni sufficienti ad un utilizzo completo
+              del programma, in ogni sua modalità e potenzialità. Gli sport
+              gestiti sono selezionabili da un menu iniziale, ed il piano
+              evolutivo prevede un progressivo ampliamento del loro numero, per
+              le necessità di tutti gli sportivi praticanti, e di quanti allo
+              sport dedicano, per lavoro o passione, energie ed entusiasmo.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <br />
+
+      <!-- Secondo blocco -->
+      <section class="container">
+        <div class="row">
+          <!-- Secondo paragrafo -->
+          <div class="col-md-6">
+            <h2>L'idea di partenza</h2>
+            <p>
+              Spesso in ambito amatoriale, ma probabilmente anche in ambito
+              professionale, l'organizzazione e la gestione di un torneo o di un
+              campionato presenta delle difficoltà oggettive, fin dal momento
+              della generazione dei calendari. C'è poi la necessità di
+              provvedere a costanti aggiornamenti, dei giorni od orari degli
+              incontri, dei risultati e delle classifiche. La pubblicazione e la
+              distribuzione dei dati sono fondamentali, in un mondo dove si è
+              abituati a disporre in tempo reale di informazioni attraverso le
+              reti di social. È tuttavia importante garantire che, nella
+              pubblicazione, le informazioni siano controllate e validate, per
+              non introdurre dubbi o generare contestazioni. Ecco quindi l'idea
+              di un programma che sia un all-in-one ed includa tutte le funzioni
+              che servono. Il progetto è cresciuto col tempo, richiedendo
+              impegno e cura per renderlo utilizzabile al meglio da tutti,
+              gestori ed utenti.
+            </p>
+          </div>
+          <!-- Seconda immagine -->
+          <div
+            class="col-8 col-md-4 justify-content-md-center"
+            style="
+              display: block;
+              margin: 0px auto;
+              text-align: center;
+              padding-top: 16px;
+            "
+          >
+            <img class="img-thumbnail" src="/images/Schermata2.jpg" />
+            <div
+              class="rounded border"
+              style="
+                margin-bottom: 8px;
+                margin-top: 8px;
+                max-width: fit-content;
+                padding: 4px;
+                margin-left: auto;
+                margin-right: auto;
+              "
+            >
+              Screenshot 2: Caricamento Dati
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <br />
+
+      <div class="padding" style="text-align: center">
+        <div class="col-md-12">
+          <div
+            class="wow fadeInUp animated"
+            data-wow-duration="2s"
+            data-wow-delay="0.2s"
+            style="
+              visibility: visible;
+              animation-duration: 2s;
+              animation-delay: 0.2s;
+              animation-name: fadeInUp;
+            "
+          >
+            <p>
+              <b>Informativa all'utente</b>: per agevolare la navigazione la
+              sezione riguardante i tornei fa utilizzo di cookie.<br />
+              I cookie non registrano alcuna informazione personale dell'utente
+              e gli eventuali dati identificabili non verranno memorizzati.<br />
+            </p>
+            <p>
+              Per maggiori informazioni visualizza la nostra
+              <a href="/html/cookie.html">informativa sui cookie</a>.
+              <br />
+            </p>
+          </div>
         </div>
       </div>
+
+      <br />
+
+      <!-- Form Contattaci -->
+      <div class="container">
+        <div class="row justify justify-content-center">
+          <div class="col-11 col-md-8 col-lg-6 col-xl-5">
+            <form action="/php/send_mail.php" method="post">
+              <div
+                class="card bg-dark"
+                style="border-radius: 3em; padding: 10px"
+              >
+                <div class="row mt-0">
+                  <div class="col-md-12">
+                    <h3 class="text" style="text-align: center; color: #42dbf0">
+                      Contattaci
+                    </h3>
+                    <p style="color: white; text-align: center">
+                      Usa questo spazio per condividere con noi domande, idee,
+                      commenti, feedback e segnalare eventuali problemi
+                    </p>
+                  </div>
+                </div>
+                <div class="form-group row mb-3">
+                  <div class="col-md-12 mb-0">
+                    <label for="email" class="mb-1" style="color: white"
+                      >Email</label
+                    >
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="esempio@provider.com"
+                      name="email"
+                      class="form-control input-box rm-border"
+                      style="border-radius: 3em"
+                      required="required"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12 mb-2">
+                    <label for="messaggio" class="mb-1" style="color: white"
+                      >Messaggio</label
+                    >
+                    <textarea
+                      id="messaggio"
+                      name="messaggio"
+                      type="text"
+                      placeholder="Inserisci il tuo messaggio"
+                      class="form-control input-box rm-border"
+                      style="border-radius: 3em"
+                      required="required"
+                    ></textarea>
+                  </div>
+                </div>
+                <div
+                  class="form-group row justify-content-center mb-0"
+                  style="text-align: center"
+                >
+                  <div class="col-md-12 px-3">
+                    <input
+                      type="submit"
+                      value="Invia"
+                      class="btn btn-block btn-outline-info rm-border"
+                      style="border-radius: 3em"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <br />
     </div>
 
-    <br />
-
-  </div>
-
-  <!-- Cookie Banner -->
-  <div include-html="/html/partials/cookieBanner.html"></div>
+    <!-- Cookie Banner -->
+    <div include-html="/html/partials/cookieBanner.html"></div>
 
     <!-- FootBar -->
     <div include-html="/html/partials/bottombar.html"></div>
