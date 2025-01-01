@@ -38,3 +38,18 @@ function setCookie(code) {
 
   document.cookie = "cartella=" + cartella + "; " + expires + "; path=/";
 }
+
+function permanentCookie(code) {
+
+  var perma = getCookie("perma");
+
+  document.cookie = "perma=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+
+  perma = perma + '/' + code;
+
+  var d = new Date();
+  d.setTime(d.getTime() + 50 * 365 * 24 * 60 * 60); //expire cookie dopo 50 anni
+  var expires = "expires=" + d.toUTCString();
+
+  document.cookie = "perma=" + perma + "; " + expires + "; path=/";
+}

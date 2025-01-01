@@ -34,39 +34,77 @@ function resettaForm() {
 }
 
 function showPopup(event) {
-  event.preventDefault(); // Prevents the default form submission behavior
+  event.preventDefault();
 
-  var formSelect = document.getElementById("form"); // Get the select element
-  var selectedOption = formSelect.options[formSelect.selectedIndex].value;
+  var formSelect = document.getElementById("form");
+  var selectedOption = formSelect.value;
+  
+  var existingCodes = getCookie("perma") || "";
+  var codiciTorneo = existingCodes.split("/");
+  var codiceTemporaneo = getCookie("cartella") || "";
 
-  if (selectedOption == "Seleziona il campionato") {
+  if (selectedOption === "Seleziona il campionato") {
     window.alert("Seleziona un torneo valido");
     return;
   }
 
-  var userInput = prompt("Inserisci il codice adesione:"); // Show prompt for user input
-
-  if (selectedOption === userInput) {
-    // If user clicked "OK"
-
-    $.ajax({
-      url: "/php/torneiHandler.php", // il percorso del file PHP che gestisce il recupero dei dati
-      method: "GET",
-      success: function (response) {
-        var data = JSON.parse(response);
-        for (var i = 0; i < data.length; i++) {
-          if (selectedOption === data[i].codiceTorneo) {
-            var code = data[i].codiceTorneo;
-            setCookie(code);
-            window.open("/html/tornei/squadre.html", "_blank");
-          }
-        }
-      },
-      error: function (xhr, status, error) {
-        console.error("Error:", error);
-      },
-    });
-  } else {
-    window.alert("Codice inserito inesistente o errato");
+  if (codiceTemporaneo === selectedOption) {
+    window.open("/html/tornei/squadre.html", "_blank");
+    return;
   }
+
+  if (codiciTorneo.includes(selectedOption)) {
+    setCookie(selectedOption);
+    window.open("/html/tornei/squadre.html", "_blank");
+    return;
+  }
+
+  var userInput = prompt("Inserisci il codice adesione:");
+  if (!userInput) {
+    window.alert("Codice adesione non inserito!");
+    return;
+  }
+
+  $.ajax({
+    url: "/php/torneiHandler.php",
+    method: "GET",
+    success: function (response) {
+      try {
+        var data = JSON.parse(response);
+        var torneo = data.find((item) => item.codiceTorneo === selectedOption);
+
+        if (!torneo) {
+          window.alert("Codice torneo non trovato!");
+          return;
+        }
+
+        if (codiceTemporaneo.includes(selectedOption) && selectedOption === torneo.codiceTorneo) {
+          window.open("/html/tornei/squadre.html", "_blank");
+          return;
+        }
+
+        // Verifica nei cookie
+        if (codiciTorneo.includes(selectedOption) && selectedOption === torneo.codiceTorneo) {
+          setCookie(selectedOption);
+          window.open("/html/tornei/squadre.html", "_blank");
+          return;
+        }
+
+        // Verifica input utente
+        if (selectedOption === userInput && selectedOption === torneo.codiceTorneo) {
+          permanentCookie(selectedOption);
+          setCookie(selectedOption);
+          window.open("/html/tornei/squadre.html", "_blank");
+          return;
+        }
+
+        window.alert("Codice inserito inesistente o errato");
+      } catch (error) {
+        console.error("Errore durante il parsing dei dati:", error);
+      }
+    },
+    error: function (xhr, status, error) {
+      console.error("Errore durante il recupero dei dati:", error);
+    },
+  });
 }
