@@ -46,6 +46,8 @@
               data[i].nomeSquadra +
               '<br>Partite giocate: '+
               data[i].partiteGiocate +
+              '<br>Punti ottenuti: '+
+              data[i].puntiSquadra +
               '<br>Vittorie: '+
               data[i].partiteVinte +
               ', Sconfitte: '+
@@ -66,7 +68,7 @@
               ' - Sconfitte: '+
               data[i].partitePerse +
               ' )</br>Punti ottenuti: '+
-              data[i].puntiFatti+
+              data[i].puntiSquadra+
               ' - Penalità: ' +
               data[i].penalità +
               ' </br>Set vinti: ' +
