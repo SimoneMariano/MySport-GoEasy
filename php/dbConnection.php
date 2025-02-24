@@ -1,6 +1,6 @@
 <?php
 // Connessione al database
-$servername = "127.0.0.1"; //localhost
+$servername = "127.0.0.1:8080"; //localhost
 $username = "root"; // il tuo nome utente MySQL o phpMyAdmin
 $password = ""; // la tua password MySQL o phpMyAdmin
 $dbname = "volley"; // il nome del tuo database

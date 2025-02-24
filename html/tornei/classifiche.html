@@ -39,8 +39,6 @@
       body {
         height: 100%;
         margin: 0;
-      }
-      body {
         display: flex;
         flex-direction: column;
       }
@@ -50,10 +48,48 @@
       footer {
         text-align: center;
       }
+      #legend1 {
+        display: none;
+      }
+      #legend2 {
+        display: none;
+      }
+      /* Cambia il testo in base alla dimensione dello schermo */
+      @media (max-width: 994px) {
+        /* Nasconde il testo originale su mobile */
+        th[data-label]:before {
+          content: attr(data-label);
+          font-size: 14px; /* Dimensione del testo su mobile */
+          font-weight: bold;
+          display: block; /* Lo rende visibile */
+          text-align: center;
+        }
+
+        /* Nasconde il testo originale su mobile */
+        th[data-label] {
+          font-size: 0;
+        }
+
+        #legend1 {
+          display: block;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #legend1 {
+          display: none;
+        }
+        #legend2 {
+          display: block;
+          text-align: center;
+        }
+      }
+
     </style>
   </head>
 
-  <body onload="completeClass(); titleAppend();">
+  <body onload="completeClass(); titleAppend(); completeClassTable()">
     <!-- Topimage -->
     <div include-html="/html/partials/topimage.html"></div>
     <!-- Navbar -->
@@ -108,10 +144,70 @@
       </div>
 
       <br />
+
+      <!-- Tabella classifica visuale classica-->
+      <div class="container mt-4">
+        <p
+          id="legend1"
+          style="color: gray; font-size: 12px;"
+        >
+          PT: Punti | PG: Partite Giocate | V: Vittorie | S: Sconfitte | SV: Set
+          Vinti | SP: Set Persi | PF: Punti Fatti | PS: Punti Subiti | RS: Rateo
+          Set | RP: Rateo Punti | DS: Diff. Set | DP: Diff. Punti
+        </p>
+        <p
+          id="legend2"
+          style="color: gray; font-size: 12px;"
+        >
+          PT: Punti | PG: Partite Giocate | V: Vittorie | S: Sconfitte | SV: Set
+          Vinti | SP: Set Persi | PF: Punti Fatti | PS: Punti Subiti
+        </p>
+        <div class="table-responsive">
+          <table
+            id="classifica-table"
+            class="table table-striped table-hover table-sm"
+          >
+            <thead class="table-dark text-center">
+              <tr>
+                <th class="col">#</th>
+                <th class="col" data-label="Team">Squadra</th>
+                <th class="col" data-label="PT">Punti</th>
+                <th class="col" data-label="PG">Partite Giocate</th>
+                <th class="col" data-label="V">Vittorie</th>
+                <th class="col" data-label="S">Sconfitte</th>
+                <th class="col d-none d-md-table-cell" data-label="Pen.">
+                  Penalità
+                </th>
+                <th class="col" data-label="SV">Set Vinti</th>
+                <th class="col" data-label="SP">Set Persi</th>
+                <th class="col" data-label="PF">Punti Fatti</th>
+                <th class="col" data-label="PS">Punti Subiti</th>
+                <th class="col d-none d-md-table-cell" data-label="RS">
+                  Rateo Set
+                </th>
+                <th class="col d-none d-md-table-cell" data-label="RP">
+                  Rateo Punti
+                </th>
+                <th class="col d-none d-md-table-cell" data-label="DS">
+                  Diff. Set
+                </th>
+                <th class="col d-none d-md-table-cell" data-label="DP">
+                  Diff. Punti
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Le righe verranno popolate dinamicamente da classificheHandler.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <br />
       <p class="text" align="center" style="color: gray">
         Premere su uno dei riquadri per ulteriori informazioni
       </p>
-
+      <!-- Visualizzazione alternativa -->
       <div class="container-fluid">
         <div
           class="row"
