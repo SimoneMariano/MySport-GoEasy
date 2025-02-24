@@ -1,0 +1,8 @@
+User-Agent: *
+Disallow: 
+Disallow: /data/
+Disallow: /images/
+Disallow: /js/
+Disallow: /php/
+
+Sitemap: https://mysportgoeasy.altervista.org/sitemap.xml
