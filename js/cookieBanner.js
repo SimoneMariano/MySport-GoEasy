@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+function verifyCookie() {
     var cookieBanner = document.getElementById('cb-cookie-banner');
     var acceptButton = document.getElementById('cb-cookie-accept');
 
@@ -36,4 +36,4 @@ document.addEventListener('DOMContentLoaded', function () {
         cookieBanner.style.display = 'none';
     });
 
-});
+}

@@ -1,25 +1,42 @@
 <!-- Cookie Banner -->
+<script src="/js/cookieBanner.js"></script>
+
 <div
-id="cb-cookie-banner"
-class="alert alert-dark text-center mb-0"
-role="alert"
-style="display: none;
-    flex-direction: column;
-    align-items: center;"
+  id="cb-cookie-banner"
+  class="alert alert-dark text-center mb-0"
+  role="alert"
+  style="display: none; flex-direction: column; align-items: center"
+  onload="verifyCookie()"
 >
-<p>
-Questo sito utilizza cookie tecnici. <br />Proseguendo nella navigazione
-accetti l’utilizzo dei cookie. <br />Per maggiori informazioni consulta
-la nostra <br />
-<a href="/html/cookie.html" target="blank">Informativa</a>.
-</p>
-<button
-type="button"
-id="cb-cookie-accept"
-class="btn btn-success btn-sm"
-style="margin: 0 auto;"
->
-Accetta
-</button>
+  <p>
+    Questo sito web utilizza cookie o tecnologie simili per migliorare la tua
+    esperienza di navigazione. Continuando a utilizzare il nostro sito Web,
+    accetti la nostra
+    <a href="/html/cookie.html" target="blank">Informativa aull'uso dei cookie</a>.
+  </p>
+  <button
+    type="button"
+    id="cb-cookie-accept"
+    class="btn btn-success btn-sm"
+    style="margin: 0 auto"
+  >
+    Accetta
+  </button>
 </div>
+
+<style>
+  #cb-cookie-banner {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    z-index: 999;
+    border-radius: 3em;
+    display: none;
+    font-size: small;
+    margin: auto;
+  }
+</style>
+
 <!-- End of Cookie Banner -->

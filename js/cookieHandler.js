@@ -48,7 +48,7 @@ function permanentCookie(code) {
   perma = perma + '/' + code;
 
   var d = new Date();
-  d.setTime(d.getTime() + 50 * 365 * 24 * 60 * 60); //expire cookie dopo 50 anni
+  d.setTime(d.getTime() + 50 * 365 * 24 * 60 * 60 * 1000); //expire cookie dopo 50 anni
   var expires = "expires=" + d.toUTCString();
 
   document.cookie = "perma=" + perma + "; " + expires + "; path=/";
