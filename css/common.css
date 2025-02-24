@@ -1,13 +1,15 @@
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-      }
-      .content {
-        flex: 1;
-      }
-      footer {
-        text-align: center;
-      }
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
+}
+.padding {
+  flex: 1;
+}
+footer {
+  text-align: center;
+}
